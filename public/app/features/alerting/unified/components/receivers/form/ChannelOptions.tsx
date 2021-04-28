@@ -56,8 +56,6 @@ export function ChannelOptions<R extends ChannelValues>({
           );
         }
 
-        console.log('errors', errors);
-
         const error: FieldError | NestDataObject<any, FieldError> | undefined = ((option.secure
           ? errors?.secureSettings
           : errors?.settings) as Record<string, FieldError> | undefined)?.[option.propertyName];
