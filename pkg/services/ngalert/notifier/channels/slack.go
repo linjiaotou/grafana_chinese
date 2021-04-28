@@ -41,7 +41,6 @@ type SlackNotifier struct {
 	Recipient      string
 	Text           string
 	Title          string
-	Fallback       string
 	MentionUsers   []string
 	MentionGroups  []string
 	MentionChannel string
@@ -118,12 +117,11 @@ func NewSlackNotifier(model *models.AlertNotification, t *template.Template) (*S
 		MentionGroups:  mentionGroups,
 		MentionChannel: mentionChannel,
 		Username:       model.Settings.Get("username").MustString("Grafana"),
-		IconEmoji:      model.Settings.Get("icon_emoji").MustString(),
-		IconURL:        model.Settings.Get("icon_url").MustString(),
+		IconEmoji:      model.Settings.Get("iconEmoji").MustString(),
+		IconURL:        model.Settings.Get("iconUrl").MustString(),
 		Token:          token,
 		Text:           model.Settings.Get("text").MustString(`{{ template "slack.default.text" . }}`),
 		Title:          model.Settings.Get("title").MustString(`{{ template "slack.default.title" . }}`),
-		Fallback:       model.Settings.Get("fallback").MustString(`{{ template "slack.default.title" . }}`),
 		log:            log.New("alerting.notifier.slack"),
 		tmpl:           t,
 	}, nil
@@ -254,7 +252,7 @@ func (sn *SlackNotifier) buildSlackMessage(ctx context.Context, as []*types.Aler
 			{
 				Color:      getAlertStatusColor(alerts.Status()),
 				Title:      tmpl(sn.Title),
-				Fallback:   tmpl(sn.Fallback),
+				Fallback:   tmpl(sn.Title),
 				Footer:     "Grafana v" + setting.BuildVersion,
 				FooterIcon: FooterIconURL,
 				Ts:         time.Now().Unix(),
