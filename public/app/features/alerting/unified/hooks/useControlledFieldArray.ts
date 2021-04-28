@@ -1,6 +1,8 @@
 import { useCallback } from 'react';
 import { FormContextValues } from 'react-hook-form';
 
+import { get, set } from 'lodash';
+
 /*
  * react-hook-form's own useFieldArray is uncontrolled and super buggy.
  * this is a simple controlled version. It's dead simple and more robust at the cost of re-rendering the form
@@ -13,26 +15,27 @@ export function useControlledFieldArray<R>(name: string, formAPI: FormContextVal
 
   const items: R[] = watch(name);
 
+  const update = useCallback(
+    (updateFn: (items: R[]) => R[]) => {
+      const existingValues = getValues({ nest: true });
+      const newValues = JSON.parse(JSON.stringify(existingValues));
+      const items = get(newValues, name) ?? [];
+      reset(set(newValues, name, updateFn(items)));
+    },
+    [getValues, name, reset]
+  );
+
   return {
     items,
-    append: useCallback(
-      (values: R) => {
-        const existingValues = getValues({ nest: true });
-        reset({
-          ...existingValues,
-          [name]: [...(existingValues[name] ?? []), values],
-        });
-      },
-      [getValues, reset, name]
-    ),
+    append: useCallback((values: R) => update((items) => [...items, values]), [update]),
     remove: useCallback(
-      (index: number) => {
-        const values = getValues({ nest: true });
-        const items = values[name] ?? [];
-        items.splice(index, 1);
-        reset({ ...values, [name]: items });
-      },
-      [getValues, reset, name]
+      (index: number) =>
+        update((items) => {
+          const newItems = items.slice();
+          newItems.splice(index, 1);
+          return newItems;
+        }),
+      [update]
     ),
   };
 }
