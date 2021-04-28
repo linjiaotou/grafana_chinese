@@ -78,7 +78,7 @@ export function ReceiverForm<R extends ChannelValues>({
             ref={register({ required: 'Name is required', validate: { nameIsAvailable: validateNameIsAvailable } })}
           />
         </Field>
-        {items.map((item, index) => {
+        {(items ?? []).map((item, index) => {
           const initialItem = initialValues?.items.find(({ __id }) => __id === item.__id);
           return (
             <ChannelSubForm<R>

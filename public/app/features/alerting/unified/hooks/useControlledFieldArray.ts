@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { FormContextValues } from 'react-hook-form';
 
-import { get, set } from 'lodash';
+import { set } from 'lodash';
 
 /*
  * react-hook-form's own useFieldArray is uncontrolled and super buggy.
@@ -13,16 +13,15 @@ import { get, set } from 'lodash';
 export function useControlledFieldArray<R>(name: string, formAPI: FormContextValues<any>) {
   const { watch, getValues, reset } = formAPI;
 
-  const items: R[] = watch(name);
+  const items: R[] | undefined = watch(name);
 
   const update = useCallback(
     (updateFn: (items: R[]) => R[]) => {
-      const existingValues = getValues({ nest: true });
-      const newValues = JSON.parse(JSON.stringify(existingValues));
-      const items = get(newValues, name) ?? [];
-      reset(set(newValues, name, updateFn(items)));
+      const values = JSON.parse(JSON.stringify(getValues({ nest: true })));
+      const newItems = updateFn(items ?? []);
+      reset(set(values, name, newItems));
     },
-    [getValues, name, reset]
+    [getValues, name, reset, items]
   );
 
   return {
