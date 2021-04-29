@@ -30,7 +30,7 @@
       </div>
 
       <div class="gf-form">
-        <label class="gf-form-label">Color</label>
+        <label class="gf-form-label">颜色</label>
         <div class="gf-form-select-wrapper">
           <select
             class="gf-form-input"
@@ -45,14 +45,14 @@
 
       <gf-form-switch
         class="gf-form"
-        label="Fill"
+        label="填充"
         checked="threshold.fill"
         on-change="ctrl.render()"
         ng-disabled="ctrl.disabled"
       ></gf-form-switch>
 
       <div class="gf-form" ng-if="threshold.fill && threshold.colorMode === 'custom'">
-        <label class="gf-form-label">Fill color</label>
+        <label class="gf-form-label">填充颜色</label>
         <span class="gf-form-label">
           <color-picker color="threshold.fillColor" onChange="ctrl.onFillColorChange($index)"></color-picker>
         </span>
@@ -60,21 +60,21 @@
 
       <gf-form-switch
         class="gf-form"
-        label="Line"
+        label="线条"
         checked="threshold.line"
         on-change="ctrl.render()"
         ng-disabled="ctrl.disabled"
       ></gf-form-switch>
 
       <div class="gf-form" ng-if="threshold.line && threshold.colorMode === 'custom'">
-        <label class="gf-form-label">Line color</label>
+        <label class="gf-form-label">线条颜色</label>
         <span class="gf-form-label">
           <color-picker color="threshold.lineColor" onChange="ctrl.onLineColorChange($index)"></color-picker>
         </span>
       </div>
 
       <div class="gf-form">
-        <label class="gf-form-label">Y-Axis</label>
+        <label class="gf-form-label">Y-轴</label>
         <div class="gf-form-select-wrapper">
           <select
             class="gf-form-input"
@@ -99,7 +99,7 @@
 
     <div class="gf-form-button-row">
       <button class="btn btn-inverse" ng-click="ctrl.addThreshold()" ng-disabled="ctrl.disabled">
-        <icon name="'plus'"></icon>&nbsp;Add threshold
+        <icon name="'plus'"></icon>&nbsp;添加阈值
       </button>
     </div>
   </div>

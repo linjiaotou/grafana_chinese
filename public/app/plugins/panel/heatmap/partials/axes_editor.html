@@ -1,8 +1,8 @@
 <div class="editor-row">
   <div class="section gf-form-group">
-    <h5 class="section-heading">Y Axis</h5>
+    <h5 class="section-heading">Y 轴</h5>
     <div class="gf-form">
-      <label class="gf-form-label width-8">Unit</label>
+      <label class="gf-form-label width-8">单位</label>
       <unit-picker onChange="editor.setUnitFormat" value="ctrl.panel.yAxis.format" class="width-12"></unit-picker>
     </div>
     <div ng-if="ctrl.panel.dataFormat == 'timeseries'">
@@ -13,32 +13,32 @@
         </div>
       </div>
       <div class="gf-form">
-        <label class="gf-form-label width-8">Y-Min</label>
+        <label class="gf-form-label width-8">Y轴最小值</label>
         <input type="text" class="gf-form-input width-12" placeholder="auto" empty-to-null ng-model="ctrl.panel.yAxis.min" ng-change="ctrl.render()" ng-model-onblur>
       </div>
       <div class="gf-form">
-        <label class="gf-form-label width-8">Y-Max</label>
+        <label class="gf-form-label width-8">Y轴最大值</label>
         <input type="text" class="gf-form-input width-12" placeholder="auto" empty-to-null ng-model="ctrl.panel.yAxis.max" ng-change="ctrl.render()" ng-model-onblur>
       </div>
     </div>
     <div class="gf-form">
-      <label class="gf-form-label width-8">Decimals</label>
+      <label class="gf-form-label width-8">位数</label>
       <input type="number" class="gf-form-input width-12" placeholder="auto" data-placement="right"
       bs-tooltip="'Override automatic decimal precision for axis.'"
       ng-model="ctrl.panel.yAxis.decimals" ng-change="ctrl.render()" ng-model-onblur>
     </div>
     <div class="gf-form" ng-if="ctrl.panel.dataFormat == 'tsbuckets'">
-      <label class="gf-form-label width-8">Bucket bound</label>
+      <label class="gf-form-label width-8">桶的界限</label>
       <div class="gf-form-select-wrapper max-width-12">
         <select class="gf-form-input"
           ng-model="ctrl.panel.yBucketBound" ng-options="v as k for (k, v) in editor.yBucketBoundModes" ng-change="ctrl.render()"
-          data-placement="right" bs-tooltip="'Use series label as an upper or lower bucket bound.'">
+          data-placement="right" bs-tooltip="'使用连续标签作为桶的上限或下限.'">
         </select>
       </div>
     </div>
     <gf-form-switch ng-if="ctrl.panel.dataFormat == 'tsbuckets'"
       class="gf-form" label-class="width-8"
-      label="Reverse order"
+      label="倒序"
       checked="ctrl.panel.reverseYBuckets" on-change="ctrl.refresh()">
     </gf-form-switch>
   </div>
@@ -47,7 +47,7 @@
     <h5 class="section-heading">Buckets</h5>
     <div class="gf-form-inline">
       <div class="gf-form">
-        <label class="gf-form-label width-4">Y Axis</label>
+        <label class="gf-form-label width-4">Y 轴</label>
       </div>
       <div class="gf-form" ng-show="ctrl.panel.yAxis.logBase === 1">
         <label class="gf-form-label width-5">Buckets</label>
@@ -56,13 +56,13 @@
                                                                               ng-model="ctrl.panel.yBucketNumber" ng-change="ctrl.refresh()" ng-model-onblur>
       </div>
       <div class="gf-form" ng-show="ctrl.panel.yAxis.logBase === 1">
-        <label class="gf-form-label width-4">Size</label>
+        <label class="gf-form-label width-4">大小</label>
         <input type="number" class="gf-form-input width-5" placeholder="auto" data-placement="right"
                                                                               bs-tooltip="'Size of bucket. Has priority over Buckets option.'"
                                                                               ng-model="ctrl.panel.yBucketSize" ng-change="ctrl.refresh()" ng-model-onblur>
       </div>
       <div class="gf-form" ng-show="ctrl.panel.yAxis.logBase !== 1">
-        <label class="gf-form-label width-10">Split Factor</label>
+        <label class="gf-form-label width-10">分割因子</label>
         <input type="number"
                class="gf-form-input width-9"
                placeholder="1"
@@ -74,7 +74,7 @@
     </div>
     <div class="gf-form-inline">
       <div class="gf-form">
-        <label class="gf-form-label width-4">X Axis</label>
+        <label class="gf-form-label width-4">X 轴</label>
       </div>
       <div class="gf-form">
         <label class="gf-form-label width-5">Buckets</label>

@@ -172,18 +172,18 @@ export class GraphCtrl extends MetricsPanelCtrl {
   }
 
   onInitEditMode() {
-    this.addEditorTab('Display', 'public/app/plugins/panel/graph/tab_display.html');
-    this.addEditorTab('Series overrides', 'public/app/plugins/panel/graph/tab_series_overrides.html');
-    this.addEditorTab('Axes', axesEditorComponent);
-    this.addEditorTab('Legend', 'public/app/plugins/panel/graph/tab_legend.html');
-    this.addEditorTab('Thresholds', 'public/app/plugins/panel/graph/tab_thresholds.html');
-    this.addEditorTab('Time regions', 'public/app/plugins/panel/graph/tab_time_regions.html');
+    this.addEditorTab('展示', 'public/app/plugins/panel/graph/tab_display.html');
+    this.addEditorTab('连续覆盖', 'public/app/plugins/panel/graph/tab_series_overrides.html');
+    this.addEditorTab('坐标轴', axesEditorComponent);
+    this.addEditorTab('图例', 'public/app/plugins/panel/graph/tab_legend.html');
+    this.addEditorTab('阈值', 'public/app/plugins/panel/graph/tab_thresholds.html');
+    this.addEditorTab('时区', 'public/app/plugins/panel/graph/tab_time_regions.html');
     this.subTabIndex = 0;
     this.hiddenSeriesTainted = false;
   }
 
   onInitPanelActions(actions: any[]) {
-    actions.push({ text: 'Toggle legend', click: 'ctrl.toggleLegend()', shortcut: 'p l' });
+    actions.push({ text: '切换图例', click: 'ctrl.toggleLegend()', shortcut: 'p l' });
   }
 
   issueQueries(datasource: any) {
@@ -263,9 +263,9 @@ export class GraphCtrl extends MetricsPanelCtrl {
         for (const frame of this.dataList) {
           if (frame.length && frame.fields?.length) {
             return {
-              title: 'Unable to graph data',
-              tip: 'Data exists, but is not timeseries',
-              actionText: 'Switch to table view',
+              title: '无法绘制数据',
+              tip: '数据存在，但不是时间序列',
+              actionText: '切换到表格视图',
               action: () => {
                 dispatch(changePanelPlugin(this.panel, 'table'));
               },
@@ -275,8 +275,8 @@ export class GraphCtrl extends MetricsPanelCtrl {
       }
 
       return {
-        title: 'No data',
-        tip: 'No data returned from query',
+        title: '没有数据',
+        tip: '没有查询到数据',
       };
     }
 
@@ -289,8 +289,8 @@ export class GraphCtrl extends MetricsPanelCtrl {
 
     // All data is outside the time range
     const dataWarning: DataWarning = {
-      title: 'Data outside time range',
-      tip: 'Can be caused by timezone mismatch or missing time filter in query',
+      title: '时间范围外的数据',
+      tip: '可能是由于查询中时区不匹配或缺少时间过滤器造成的',
     };
 
     const range = getDataTimeRange(this.dataList);

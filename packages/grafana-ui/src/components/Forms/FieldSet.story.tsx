@@ -37,7 +37,7 @@ export const basic = () => {
               <Input name="fontsize" />
             </Field>
           </FieldSet>
-          <Button variant="primary">Save</Button>
+          <Button variant="primary">保存</Button>
         </>
       )}
     </Form>

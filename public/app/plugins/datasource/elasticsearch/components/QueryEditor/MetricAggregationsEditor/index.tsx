@@ -22,7 +22,7 @@ export const MetricAggregationsEditor: FunctionComponent<Props> = ({ nextId }) =
     <>
       {metrics?.map((metric, index) => (
         <QueryEditorRow
-          key={`${metric.type}-${metric.id}`}
+          key={metric.id}
           label={`Metric (${metric.id})`}
           hidden={metric.hide}
           onHideClick={() => dispatch(toggleMetricVisibility(metric.id))}

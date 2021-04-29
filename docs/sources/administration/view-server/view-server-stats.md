@@ -36,7 +36,7 @@ The following statistics are displayed in the Stats tab:
 - Total playlists
 - Total snapshots
 - Total dashboard tags
-- Total starred dashboards
+- Total Starred dashboards
 - Total alerts
 
 ## Counting users

@@ -32,16 +32,16 @@ export const ChangePasswordForm: FC<Props> = ({ user, onChangePassword, isSaving
         {({ register, errors, getValues }) => {
           return (
             <>
-              <Field label="Old password" invalid={!!errors.oldPassword} error={errors?.oldPassword?.message}>
-                <Input type="password" name="oldPassword" ref={register({ required: 'Old password is required' })} />
+              <Field label="旧密码" invalid={!!errors.oldPassword} error={errors?.oldPassword?.message}>
+                <Input type="password" name="oldPassword" ref={register({ required: '需要使用旧密码' })} />
               </Field>
 
-              <Field label="New password" invalid={!!errors.newPassword} error={errors?.newPassword?.message}>
+              <Field label="新密码" invalid={!!errors.newPassword} error={errors?.newPassword?.message}>
                 <Input
                   type="password"
                   name="newPassword"
                   ref={register({
-                    required: 'New password is required',
+                    required: '需要新密码',
                     validate: {
                       confirm: (v) => v === getValues().confirmNew || 'Passwords must match',
                       old: (v) => v !== getValues().oldPassword || `New password can't be the same as the old one.`,
@@ -50,22 +50,22 @@ export const ChangePasswordForm: FC<Props> = ({ user, onChangePassword, isSaving
                 />
               </Field>
 
-              <Field label="Confirm password" invalid={!!errors.confirmNew} error={errors?.confirmNew?.message}>
+              <Field label="确认密码" invalid={!!errors.confirmNew} error={errors?.confirmNew?.message}>
                 <Input
                   type="password"
                   name="confirmNew"
                   ref={register({
-                    required: 'New password confirmation is required',
-                    validate: (v) => v === getValues().newPassword || 'Passwords must match',
+                    required: '需要确认新密码',
+                    validate: (v) => v === getValues().newPassword || '密码必须匹配',
                   })}
                 />
               </Field>
               <HorizontalGroup>
                 <Button variant="primary" disabled={isSaving}>
-                  Change Password
+                  修改密码
                 </Button>
                 <LinkButton variant="secondary" href={`${config.appSubUrl}/profile`}>
-                  Cancel
+                  取消
                 </LinkButton>
               </HorizontalGroup>
             </>

@@ -330,9 +330,9 @@ export class AlertTabCtrl {
         this.datasourceSrv.get(datasourceName).then(
           ((foundTarget) => (ds: DataSourceApi) => {
             if (!ds.meta.alerting) {
-              return Promise.reject('The datasource does not support alerting queries');
+              return Promise.reject('数据源不支持警报查询');
             } else if (ds.targetContainsTemplate && ds.targetContainsTemplate(foundTarget)) {
-              return Promise.reject('Template variables are not supported in alert queries');
+              return Promise.reject('在警告查询中不支持模板变量');
             }
             return Promise.resolve();
           })(foundTarget)

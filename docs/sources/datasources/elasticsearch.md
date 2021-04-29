@@ -77,7 +77,9 @@ number followed by a valid time identifier, e.g. `1m` (1 minute) or `30s` (30 se
 | `s`        | second      |
 | `ms`       | millisecond |
 
-### Logs
+### Logs (BETA)
+
+> Only available in Grafana v6.3+.
 
 There are two parameters, `Message field name` and `Level field name`, that can optionally be configured from the data source settings page that determine
 which fields will be used for log messages and log levels when visualizing logs in [Explore]({{< relref "../explore" >}}).
@@ -189,18 +191,18 @@ for annotation events.
 | `Text`     | Event description field.                                                                                                                   |
 | `Tags`     | Optional field name to use for event tags (can be an array or a CSV string).                                                               |
 
-## Querying Logs
+## Querying Logs (BETA)
+
+> Only available in Grafana v6.3+.
 
 Querying and displaying log data from Elasticsearch is available in [Explore]({{< relref "../explore" >}}), and in the [logs panel]({{< relref "../panels/visualizations/logs-panel.md" >}}) in dashboards.
 Select the Elasticsearch data source, and then optionally enter a lucene query to display your logs.
-
-When switching from a Prometheus or Loki data source in Explore, your query is translated to an Elasticsearch log query with a correct Lucene filter.
 
 ### Log Queries
 
 Once the result is returned, the log panel shows a list of log rows and a bar chart where the x-axis shows the time and the y-axis shows the frequency/count.
 
-Note that the fields used for log message and level is based on an [optional data source configuration](#logs).
+Note that the fields used for log message and level is based on an [optional data source configuration](#logs-beta).
 
 ### Filter Log Messages
 

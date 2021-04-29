@@ -12,19 +12,19 @@ export interface FooterLink {
 export let getFooterLinks = (): FooterLink[] => {
   return [
     {
-      text: 'Documentation',
+      text: '文档',
       icon: 'document-info',
       url: 'https://grafana.com/docs/grafana/latest/?utm_source=grafana_footer',
       target: '_blank',
     },
     {
-      text: 'Support',
+      text: '支持',
       icon: 'question-circle',
       url: 'https://grafana.com/products/enterprise/?utm_source=grafana_footer',
       target: '_blank',
     },
     {
-      text: 'Community',
+      text: '社区',
       icon: 'comments-alt',
       url: 'https://community.grafana.com/?utm_source=grafana_footer',
       target: '_blank',

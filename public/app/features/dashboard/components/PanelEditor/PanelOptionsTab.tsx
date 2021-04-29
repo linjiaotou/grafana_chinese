@@ -63,17 +63,17 @@ export const PanelOptionsTab: FC<Props> = ({
 
   // First common panel settings Title, description
   elements.push(
-    <OptionsGroup title="Settings" id="Panel settings" key="Panel settings">
-      <Field label="Panel title">
+    <OptionsGroup title="设置" id="Panel settings" key="Panel settings">
+      <Field label="面板标题">
         <Input defaultValue={panel.title} onBlur={(e) => onPanelConfigChange('title', e.currentTarget.value)} />
       </Field>
-      <Field label="Description" description="Panel description supports markdown and links.">
+      <Field label="描述" description="面板描述支持编辑和链接.">
         <TextArea
           defaultValue={panel.description}
           onBlur={(e) => onPanelConfigChange('description', e.currentTarget.value)}
         />
       </Field>
-      <Field label="Transparent" description="Display panel without a background.">
+      <Field label="透明" description="显示没有背景的面板.">
         <Switch
           value={panel.transparent}
           onChange={(e) => onPanelConfigChange('transparent', e.currentTarget.checked)}
@@ -83,7 +83,7 @@ export const PanelOptionsTab: FC<Props> = ({
   );
 
   elements.push(
-    <OptionsGroup title="Visualization" id="Panel type" key="Panel type" defaultToClosed onToggle={focusVisPickerInput}>
+    <OptionsGroup title="可视化" id="Panel type" key="Panel type" defaultToClosed onToggle={focusVisPickerInput}>
       {(toggleExpand) => <VisualizationTab panel={panel} ref={visTabInputRef} onToggleOptionGroup={toggleExpand} />}
     </OptionsGroup>
   );
@@ -91,7 +91,7 @@ export const PanelOptionsTab: FC<Props> = ({
   // Old legacy react editor
   if (plugin.editor && panel && !plugin.optionEditors) {
     elements.push(
-      <OptionsGroup title="Options" id="legacy react editor" key="legacy react editor">
+      <OptionsGroup title="选项" id="legacy react editor" key="legacy react editor">
         <plugin.editor data={data} options={panel.getOptions()} onOptionsChange={onPanelOptionsChanged} />
       </OptionsGroup>
     );
@@ -136,17 +136,15 @@ export const PanelOptionsTab: FC<Props> = ({
   );
 
   elements.push(
-    <OptionsGroup title="Repeat options" id="panel repeats" key="panel repeats" defaultToClosed>
+    <OptionsGroup title="重播的选项" id="panel repeats" key="panel repeats" defaultToClosed>
       <Field
-        label="Repeat by variable"
-        description="Repeat this panel for each value in the selected variable.
-          This is not visible while in edit mode. You need to go back to dashboard and then update the variable or
-          reload the dashboard."
+        label="根据变量重播"
+        description="对所选变量中的每个值重播此面板，这在编辑模式下是不可见的，你需要回到仪表盘，然后更新变量或重载仪表板。"
       >
         <RepeatRowSelect repeat={panel.repeat} onChange={onRepeatRowSelectChange} />
       </Field>
       {panel.repeat && (
-        <Field label="Repeat direction">
+        <Field label="重播的方向">
           <RadioButtonGroup
             options={directionOptions}
             value={panel.repeatDirection || 'h'}
@@ -156,7 +154,7 @@ export const PanelOptionsTab: FC<Props> = ({
       )}
 
       {panel.repeat && panel.repeatDirection === 'h' && (
-        <Field label="Max per row">
+        <Field label="每行最大值">
           <Select
             options={maxPerRowOptions}
             value={panel.maxPerRow}

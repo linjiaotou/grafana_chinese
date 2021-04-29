@@ -7,7 +7,7 @@ import { ErrorWithStack } from './ErrorWithStack';
 import { Alert } from '../Alert/Alert';
 
 export default {
-  title: 'General/ErrorBoundary',
+  title: '通用/ErrorBoundary',
   component: ErrorBoundary,
   decorators: [withCenteredStory],
   parameters: {

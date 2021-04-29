@@ -13,7 +13,7 @@ export interface Props {
 export const QueryTypeSelector: FunctionComponent<Props> = ({ onChange, value, templateVariableOptions }) => {
   return (
     <div className="gf-form-inline">
-      <label className="gf-form-label query-keyword width-9">Query Type</label>
+      <label className="gf-form-label query-keyword width-9">查询类型</label>
       <Segment
         value={[...queryTypes, ...templateVariableOptions].find((qt) => qt.value === value)}
         options={[

@@ -9,22 +9,22 @@ export const getServerStats = async (): Promise<ServerStat[]> => {
   try {
     const res = await getBackendSrv().get('api/admin/stats');
     return [
-      { name: 'Total users', value: res.users },
-      { name: 'Total admins', value: res.admins },
-      { name: 'Total editors', value: res.editors },
-      { name: 'Total viewers', value: res.viewers },
-      { name: 'Active users (seen last 30 days)', value: res.activeUsers },
-      { name: 'Active admins (seen last 30 days)', value: res.activeAdmins },
-      { name: 'Active editors (seen last 30 days)', value: res.activeEditors },
-      { name: 'Active viewers (seen last 30 days)', value: res.activeViewers },
-      { name: 'Active sessions', value: res.activeSessions },
-      { name: 'Total dashboards', value: res.dashboards },
-      { name: 'Total orgs', value: res.orgs },
-      { name: 'Total playlists', value: res.playlists },
-      { name: 'Total snapshots', value: res.snapshots },
-      { name: 'Total dashboard tags', value: res.tags },
-      { name: 'Total starred dashboards', value: res.stars },
-      { name: 'Total alerts', value: res.alerts },
+      { name: '用户总数量', value: res.users },
+      { name: '管理员总数量', value: res.admins },
+      { name: '编辑者总数量', value: res.editors },
+      { name: '浏览者总数量', value: res.viewers },
+      { name: '活跃用户数量 (过去30天)', value: res.activeUsers },
+      { name: '活跃的管理员数量 (过去30天)', value: res.activeAdmins },
+      { name: '活跃的编辑者数量 (过去30天)', value: res.activeEditors },
+      { name: '活跃的浏览者数量 (过去30天)', value: res.activeViewers },
+      { name: '活跃的会话数量', value: res.activeSessions },
+      { name: '仪表盘总数量', value: res.dashboards },
+      { name: '组织总数量', value: res.orgs },
+      { name: '播放列表总数量', value: res.playlists },
+      { name: '快照总数量', value: res.snapshots },
+      { name: '仪表盘标签总数量', value: res.tags },
+      { name: '星标仪表盘总数量', value: res.stars },
+      { name: '预警总数量', value: res.alerts },
     ];
   } catch (error) {
     console.error(error);

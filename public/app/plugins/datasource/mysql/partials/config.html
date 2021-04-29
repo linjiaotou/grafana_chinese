@@ -1,20 +1,20 @@
-<h3 class="page-heading">MySQL Connection</h3>
+<h3 class="page-heading">MySQL 连接</h3>
 
 <div class="gf-form-group">
 	<div class="gf-form max-width-30">
-		<span class="gf-form-label width-7">Host</span>
+		<span class="gf-form-label width-7">主机</span>
 		<input type="text" class="gf-form-input" ng-model='ctrl.current.url' placeholder="localhost:3306" bs-typeahead="{{['localhost:3306', 'localhost:3307']}}" required></input>
 	</div>
 
 	<div class="gf-form max-width-30">
-		<span class="gf-form-label width-7">Database</span>
-		<input type="text" class="gf-form-input" ng-model='ctrl.current.database' placeholder="database name" required></input>
+		<span class="gf-form-label width-7">数据库</span>
+		<input type="text" class="gf-form-input" ng-model='ctrl.current.database' placeholder="数据库名称" required></input>
 	</div>
 
 	<div class="gf-form-inline">
 		<div class="gf-form max-width-15">
-			<span class="gf-form-label width-7">User</span>
-			<input type="text" class="gf-form-input" ng-model='ctrl.current.user' placeholder="user"></input>
+			<span class="gf-form-label width-7">账户</span>
+			<input type="text" class="gf-form-input" ng-model='ctrl.current.user' placeholder="账户"></input>
 		</div>
 		<div class="gf-form">
       <secret-form-field
@@ -29,14 +29,14 @@
 
 	<div class="gf-form-group">
 		<div class="gf-form-inline">
-			<gf-form-checkbox class="gf-form" label="TLS Client Auth" label-class="width-10"
+			<gf-form-checkbox class="gf-form" label="TLS客户端身份验证" label-class="width-10"
 				checked="ctrl.current.jsonData.tlsAuth" switch-class="max-width-6"></gf-form-checkbox>
 			<gf-form-checkbox class="gf-form" label="With CA Cert" tooltip="Needed for
 				verifing self-signed TLS Certs" checked="ctrl.current.jsonData.tlsAuthWithCACert" label-class="width-11"
 				switch-class="max-width-6"></gf-form-checkbox>
 		</div>
 		<div class="gf-form-inline">
-			<gf-form-checkbox class="gf-form" label="Skip TLS Verify" label-class="width-10"
+			<gf-form-checkbox class="gf-form" label="跳过TLS验证" label-class="width-10"
 				checked="ctrl.current.jsonData.tlsSkipVerify" switch-class="max-width-6"></gf-form-checkbox>
 		</div>
 	</div>
@@ -44,21 +44,18 @@
 <datasource-tls-auth-settings current="ctrl.current" ng-if="(ctrl.current.jsonData.tlsAuth || ctrl.current.jsonData.tlsAuthWithCACert)">
 </datasource-tls-auth-settings>
 
-<b>Connection limits</b>
+<b>连接限制</b>
 
 <div class="gf-form-group">
 	<div class="gf-form max-width-15">
-		<span class="gf-form-label width-7">Max open</span>
-		<input type="number" min="0" class="gf-form-input gf-form-input--has-help-icon" ng-model="ctrl.current.jsonData.maxOpenConns" placeholder="unlimited"></input>
+		<span class="gf-form-label width-7">最大打开连接数</span>
+		<input type="number" min="0" class="gf-form-input gf-form-input--has-help-icon" ng-model="ctrl.current.jsonData.maxOpenConns" placeholder="没有限制"></input>
 		<info-popover mode="right-absolute">
-			The maximum number of open connections to the database. If <i>Max idle connections</i> is greater than 0 and the
-			<i>Max open connections</i> is less than <i>Max idle connections</i>, then <i>Max idle connections</i> will be
-			reduced to match the <i>Max open connections</i> limit. If set to 0, there is no limit on the number of open
-			connections.
+      打开数据库的最大连接数. 如果 <i>最大空闲连接</i> 大于 0 并且<i>最大打开连接数</i> 小于 <i>最大空闲连接</i>, 然后 <i>最大空闲连接</i> 就会减少到 <i>最大打开连接数</i> 限制. 如果设置为0, 打开的连接数量没有限制
 		</info-popover>
 	</div>
 	<div class="gf-form max-width-15">
-		<span class="gf-form-label width-7">Max idle</span>
+		<span class="gf-form-label width-7">最大空闲数</span>
 		<input type="number" min="0" class="gf-form-input gf-form-input--has-help-icon" ng-model="ctrl.current.jsonData.maxIdleConns" placeholder="2"></input>
 		<info-popover mode="right-absolute">
 			The maximum number of connections in the idle connection pool. If <i>Max open connections</i> is greater than 0 but
@@ -67,7 +64,7 @@
 		</info-popover>
 	</div>
 	<div class="gf-form max-width-15">
-		<span class="gf-form-label width-7">Max lifetime</span>
+		<span class="gf-form-label width-7">最长生存时间</span>
 		<input type="number" min="0" class="gf-form-input gf-form-input--has-help-icon" ng-model="ctrl.current.jsonData.connMaxLifetime" placeholder="14400"></input>
 		<info-popover mode="right-absolute">
 			The maximum amount of time in seconds a connection may be reused. If set to 0, connections are reused forever.<br/><br/>
@@ -76,12 +73,12 @@
 	</div>
 </div>
 
-<h3 class="page-heading">MySQL details</h3>
+<h3 class="page-heading">MySQL 详情</h3>
 
 <div class="gf-form-group">
 	<div class="gf-form-inline">
 		<div class="gf-form">
-			<span class="gf-form-label width-9">Min time interval</span>
+			<span class="gf-form-label width-9">最小时间间隔</span>
 			<input
         type="text"
         class="gf-form-input width-6 gf-form-input--has-help-icon"
@@ -100,14 +97,16 @@
 
 <div class="gf-form-group">
 	<div class="grafana-info-box">
-		<h5>User Permission</h5>
+		<h5>用户权限</h5>
 		<p>
-			The database user should only be granted SELECT permissions on the specified database &amp; tables you want to query.
+      数据库用户只应该被授予要查询的指定数据库和表上的SELECT权限，Grafana不验证查询是否安全，所以查询可以包含任何SQL语句。例如，就像
+      <code>USE otherdb;</code> 和 <code>DROP TABLE user;</code>语句将被执行。为了防止这种情况，我们<strong>强烈</strong>
+      建议您创建一个受限权限的MySQL用户。查看<a class="external-link" target="_blank" href="http://docs.grafana.org/features/datasources/mysql/">MySQL数据源文档</a>以获得更多信息。
+<!--			The database user should only be granted SELECT permissions on the specified database &amp; tables you want to query.
 			Grafana does not validate that queries are safe so queries can contain any SQL statement. For example, statements
 			like <code>USE otherdb;</code> and <code>DROP TABLE user;</code> would be executed. To protect against this we
-			<strong>Highly</strong> recommmend you create a specific MySQL user with restricted permissions.
-
-			Checkout the <a class="external-link" target="_blank" href="http://docs.grafana.org/features/datasources/mysql/">MySQL Data Source Docs</a> for more information.
+			<strong>Highly</strong> recommend you create a specific MySQL user with restricted permissions.
+			Checkout the <a class="external-link" target="_blank" href="http://docs.grafana.org/features/datasources/mysql/">MySQL Data Source Docs</a> for more information.-->
 		</p>
 	</div>
 </div>

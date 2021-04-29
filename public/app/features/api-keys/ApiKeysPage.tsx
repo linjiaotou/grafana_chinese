@@ -130,12 +130,12 @@ export class ApiKeysPageUnconnected extends PureComponent<Props, State> {
                 <>
                   {showCTA ? (
                     <EmptyListCTA
-                      title="You haven't added any API Keys yet."
+                      title="您还没有添加任何API密钥。"
                       buttonIcon="key-skeleton-alt"
                       buttonLink="#"
                       onClick={toggleIsAdding}
-                      buttonTitle="New API Key"
-                      proTip="Remember you can provide view-only API access to other applications."
+                      buttonTitle="新建API密钥"
+                      proTip="记住，您可以为其他应用程序提供仅查看的API访问"
                     />
                   ) : null}
                   {showTable ? (
@@ -150,7 +150,7 @@ export class ApiKeysPageUnconnected extends PureComponent<Props, State> {
                   {showTable ? (
                     <>
                       <h3 className="page-heading">Existing Keys</h3>
-                      <Switch label="Show expired" checked={includeExpired} onChange={this.onIncludeExpiredChange} />
+                      <Switch label="显示过期" checked={includeExpired} onChange={this.onIncludeExpiredChange} />
                       <ApiKeysTable apiKeys={apiKeys} timeZone={timeZone} onDelete={this.onDeleteApiKey} />
                     </>
                   ) : null}

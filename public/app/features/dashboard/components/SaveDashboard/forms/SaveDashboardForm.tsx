@@ -60,10 +60,10 @@ export const SaveDashboardForm: React.FC<SaveDashboardFormProps> = ({ dashboard,
 
           <HorizontalGroup>
             <Button type="submit" aria-label={selectors.pages.SaveDashboardModal.save}>
-              Save
+              保存
             </Button>
             <Button variant="secondary" onClick={onCancel}>
-              Cancel
+              取消
             </Button>
           </HorizontalGroup>
         </>

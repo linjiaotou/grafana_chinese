@@ -41,7 +41,7 @@ export const TokenRevokedModal = (props: Props) => {
             </p>
           </div>
           <Button size="md" variant="primary" onClick={redirectToLogin}>
-            Sign in
+            登录
           </Button>
         </InfoBox>
       </div>

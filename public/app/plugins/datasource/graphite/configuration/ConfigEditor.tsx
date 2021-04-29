@@ -70,7 +70,7 @@ export class ConfigEditor extends PureComponent<Props> {
           </div>
           <div className="gf-form-inline">
             <div className="gf-form">
-              <InlineFormLabel tooltip={this.renderTypeHelp}>Type</InlineFormLabel>
+              <InlineFormLabel tooltip={this.renderTypeHelp}>类型</InlineFormLabel>
               <Select
                 options={graphiteTypes}
                 value={graphiteTypes.find((type) => type.value === options.jsonData.graphiteType)}

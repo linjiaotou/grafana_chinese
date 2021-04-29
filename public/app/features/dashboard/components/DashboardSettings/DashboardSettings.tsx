@@ -75,7 +75,7 @@ export class DashboardSettings extends PureComponent<Props> {
 
     if (dashboard.meta.canMakeEditable) {
       pages.push({
-        title: 'General',
+        title: '通用',
         icon: 'sliders-v-alt',
         id: 'settings',
         render: () => this.renderMakeEditable(),
@@ -135,7 +135,7 @@ export class DashboardSettings extends PureComponent<Props> {
 
   getGeneralPage(): SettingsPage {
     return {
-      title: 'General',
+      title: '通用',
       id: 'settings',
       icon: 'sliders-v-alt',
       render: () => <GeneralSettings dashboard={this.props.dashboard} />,

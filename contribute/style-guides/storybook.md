@@ -27,7 +27,7 @@ With the CSF format, the default export defines some general information about t
 import MyComponent from './MyComponent';
 
 export default {
-  title: 'General/MyComponent',
+  title: '通用/MyComponent',
   component: MyComponent,
   decorators: [ ... ],
 }

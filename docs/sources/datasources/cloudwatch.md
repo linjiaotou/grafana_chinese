@@ -6,17 +6,19 @@ aliases = ["/docs/grafana/latest/datasources/cloudwatch"]
 weight = 200
 +++
 
-# AWS CloudWatch data source
+# Using AWS CloudWatch in Grafana
 
-Grafana ships with built-in support for CloudWatch. Add it as a data source, then you are ready to build dashboards or use Explore with CloudWatch metrics and CloudWatch Logs.
+Grafana ships with built-in support for CloudWatch. Add it as a data source, then you are ready to
+build dashboards or use Explore with CloudWatch metrics and CloudWatch Logs.
 
-This topic explains options, variables, querying, and other options specific to this data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Grafana. Only users with the organization admin role can add data sources.
+## Adding the data source
 
-> **Note:** If you have issues with getting this data source to work and Grafana is giving you undescriptive errors, then check your log file (try looking in /var/log/grafana/grafana.log).
+1. In the side menu under the `Configuration` link, click on `Data Sources`.
+1. Click the `Add data source` button.
+1. Select `Cloudwatch` in the `Cloud` section.
 
-## Cloudwatch settings
-
-To access data source settings, hover your mouse over the **Configuration** (gear) icon, then click **Data Sources**, and then click the AWS Cloudwatch data source.
+> **Note:** If at any moment you have issues with getting this data source to work and Grafana is giving you undescriptive errors then don't
+> forget to check your log file (try looking in /var/log/grafana/grafana.log).
 
 | Name                       | Description                                                                                                             |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
@@ -184,6 +186,8 @@ If the period field is left blank or set to `auto`, then it calculates automatic
 
 ### Deep linking from Grafana panels to the CloudWatch console
 
+> Only available in Grafana v6.5+.
+
 {{< docs-imagebox img="/img/docs/v65/cloudwatch-deep-linking.png" max-width="500px" class="docs-image--right" caption="CloudWatch deep linking" >}}
 
 Left clicking a time series in the panel shows a context menu with a link to `View in CloudWatch console`. Clicking that link will open a new tab that will take you to the CloudWatch console and display all the metrics for that query. If you're not currently logged in to the CloudWatch console, the link will forward you to the login page. The provided link is valid for any account but will only display the right metrics if you're logged in to the account that corresponds to the selected data source in Grafana.
@@ -192,7 +196,7 @@ This feature is not available for metrics that are based on metric math expressi
 
 ## Using the Logs Query Editor
 
-> **Note:** Available in Grafana v7.0+.
+> Only available in Grafana v7.0+.
 
 To query CloudWatch Logs, select the region and up to 20 log groups which you want to query. Use the main input area to write your query in [CloudWatch Logs Query Language](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html)
 
@@ -221,6 +225,8 @@ Since CloudWatch Logs queries can return numeric data, for example through the u
 See the [Alerting]({{< relref "../alerting/_index.md" >}}) documentation for more on Grafana alerts.
 
 ## Curated dashboards
+
+> Only available in Grafana v6.5+.
 
 The updated CloudWatch data source ships with pre-configured dashboards for five of the most popular AWS services:
 
@@ -296,7 +302,7 @@ Filters syntax:
 Example `ec2_instance_attribute()` query
 
 ```javascript
-ec2_instance_attribute(us - east - 1, InstanceId, { 'tag:Environment': ['production'] });
+ec2_instance_attribute(us-east-1, InstanceId, { "tag:Environment": ["production"] });
 ```
 
 ### Selecting attributes
@@ -337,10 +343,10 @@ Tags can be selected by prepending the tag name with `Tags.`
 Example `ec2_instance_attribute()` query
 
 ```javascript
-ec2_instance_attribute(us - east - 1, Tags.Name, { 'tag:Team': ['sysops'] });
+ec2_instance_attribute(us-east-1, Tags.Name, { "tag:Team": ["sysops"] });
 ```
 
-## Using JSON format template variables
+## Using json format template variables
 
 Some queries accept filters in JSON format and Grafana supports the conversion of template variables to JSON.
 
@@ -371,11 +377,11 @@ Please see the AWS documentation for [Service Quotas](https://docs.aws.amazon.co
 
 ## Configure the data source with grafana.ini
 
-In the Grafana [configuration]({{< relref "../administration/configuration.md#aws" >}}) file, there's an `AWS` section that allows you to customize the data source.
+In the [Grafana configuration](https://grafana.com/docs/grafana/latest/administration/configuration/#aws) there's an `AWS` section that allows you to customize the data source.
 
 ### allowed_auth_providers
 
-Specify which authentication providers are allowed for the CloudWatch data source. The following providers are enabled by default in OSS Grafana: `default` (AWS SDK default), keys (Access and secret key), credentials (Credentials file), ec2_IAM_role (EC2 IAM role).
+Specify which authentication providers are allowed for the CloudWatch data source. The following providers are enabled by default in OSS Grafana: `default` (AWS SDK default), keys (Access and secret key), credentials (Credentials file), ec2_iam_role (EC2 IAM role).
 
 ### assume_role_enabled
 

@@ -127,7 +127,7 @@ export const changeDedupStrategy = (
  */
 export function initializeExplore(
   exploreId: ExploreId,
-  datasourceNameOrUid: string,
+  datasourceName: string,
   queries: DataQuery[],
   range: TimeRange,
   containerWidth: number,
@@ -141,7 +141,7 @@ export function initializeExplore(
 
     if (exploreDatasources.length >= 1) {
       const orgId = getState().user.orgId;
-      const loadResult = await loadAndInitDatasource(orgId, datasourceNameOrUid);
+      const loadResult = await loadAndInitDatasource(orgId, datasourceName);
       instance = loadResult.instance;
       history = loadResult.history;
     }

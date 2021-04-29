@@ -6,7 +6,7 @@ import { WithContextMenu } from './WithContextMenu';
 import mdx from './ContextMenu.mdx';
 
 export default {
-  title: 'General/ContextMenu',
+  title: '通用/ContextMenu',
   component: ContextMenu,
   decorators: [withCenteredStory],
   parameters: {

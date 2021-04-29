@@ -10,13 +10,13 @@ import { timeZoneAbbrevation, dateTimeFormat, dateTimeFormatTimeAgo } from './fo
 import { dateTimeParse } from './parser';
 
 const spans: { [key: string]: { display: string; section?: number } } = {
-  s: { display: 'second' },
-  m: { display: 'minute' },
-  h: { display: 'hour' },
-  d: { display: 'day' },
-  w: { display: 'week' },
-  M: { display: 'month' },
-  y: { display: 'year' },
+  s: { display: '秒' },
+  m: { display: '分钟' },
+  h: { display: '小时' },
+  d: { display: '天' },
+  w: { display: '星期' },
+  M: { display: '月' },
+  y: { display: '年' },
 };
 
 const rangeOptions = [
@@ -26,8 +26,8 @@ const rangeOptions = [
   { from: 'now/w', to: 'now', display: 'This week so far', section: 2 },
   { from: 'now/M', to: 'now/M', display: 'This month', section: 2 },
   { from: 'now/M', to: 'now', display: 'This month so far', section: 2 },
-  { from: 'now/y', to: 'now/y', display: 'This year', section: 2 },
-  { from: 'now/y', to: 'now', display: 'This year so far', section: 2 },
+  { from: 'now/y', to: 'now/y', display: 'This 年', section: 2 },
+  { from: 'now/y', to: 'now', display: 'This 年 so far', section: 2 },
 
   { from: 'now-1d/d', to: 'now-1d/d', display: 'Yesterday', section: 1 },
   {
@@ -42,46 +42,46 @@ const rangeOptions = [
     display: 'This day last week',
     section: 1,
   },
-  { from: 'now-1w/w', to: 'now-1w/w', display: 'Previous week', section: 1 },
-  { from: 'now-1M/M', to: 'now-1M/M', display: 'Previous month', section: 1 },
-  { from: 'now-1y/y', to: 'now-1y/y', display: 'Previous year', section: 1 },
+  { from: 'now-1w/w', to: 'now-1w/w', display: '上星期', section: 1 },
+  { from: 'now-1M/M', to: 'now-1M/M', display: '上个月', section: 1 },
+  { from: 'now-1y/y', to: 'now-1y/y', display: '去年', section: 1 },
 
-  { from: 'now-5m', to: 'now', display: 'Last 5 minutes', section: 3 },
-  { from: 'now-15m', to: 'now', display: 'Last 15 minutes', section: 3 },
-  { from: 'now-30m', to: 'now', display: 'Last 30 minutes', section: 3 },
-  { from: 'now-1h', to: 'now', display: 'Last 1 hour', section: 3 },
-  { from: 'now-3h', to: 'now', display: 'Last 3 hours', section: 3 },
-  { from: 'now-6h', to: 'now', display: 'Last 6 hours', section: 3 },
-  { from: 'now-12h', to: 'now', display: 'Last 12 hours', section: 3 },
-  { from: 'now-24h', to: 'now', display: 'Last 24 hours', section: 3 },
-  { from: 'now-2d', to: 'now', display: 'Last 2 days', section: 0 },
-  { from: 'now-7d', to: 'now', display: 'Last 7 days', section: 0 },
-  { from: 'now-30d', to: 'now', display: 'Last 30 days', section: 0 },
-  { from: 'now-90d', to: 'now', display: 'Last 90 days', section: 0 },
-  { from: 'now-6M', to: 'now', display: 'Last 6 months', section: 0 },
-  { from: 'now-1y', to: 'now', display: 'Last 1 year', section: 0 },
-  { from: 'now-2y', to: 'now', display: 'Last 2 years', section: 0 },
-  { from: 'now-5y', to: 'now', display: 'Last 5 years', section: 0 },
+  { from: 'now-5m', to: 'now', display: '最近 5 分钟', section: 3 },
+  { from: 'now-15m', to: 'now', display: '最近 15 分钟', section: 3 },
+  { from: 'now-30m', to: 'now', display: '最近 30 分钟', section: 3 },
+  { from: 'now-1h', to: 'now', display: '最近 1 小时', section: 3 },
+  { from: 'now-3h', to: 'now', display: '最近 3 小时', section: 3 },
+  { from: 'now-6h', to: 'now', display: '最近 6 小时', section: 3 },
+  { from: 'now-12h', to: 'now', display: '最近 12 小时', section: 3 },
+  { from: 'now-24h', to: 'now', display: '最近 24 小时', section: 3 },
+  { from: 'now-2d', to: 'now', display: '最近 2 天', section: 0 },
+  { from: 'now-7d', to: 'now', display: '最近 7 天', section: 0 },
+  { from: 'now-30d', to: 'now', display: '最近 30 天', section: 0 },
+  { from: 'now-90d', to: 'now', display: '最近 90 天', section: 0 },
+  { from: 'now-6M', to: 'now', display: '最近 6 个月', section: 0 },
+  { from: 'now-1y', to: 'now', display: '最近 1 年', section: 0 },
+  { from: 'now-2y', to: 'now', display: '最近 2 年', section: 0 },
+  { from: 'now-5y', to: 'now', display: '最近 5 年', section: 0 },
 ];
 
 const hiddenRangeOptions = [
-  { from: 'now', to: 'now+1m', display: 'Next minute', section: 3 },
-  { from: 'now', to: 'now+5m', display: 'Next 5 minutes', section: 3 },
-  { from: 'now', to: 'now+15m', display: 'Next 15 minutes', section: 3 },
-  { from: 'now', to: 'now+30m', display: 'Next 30 minutes', section: 3 },
-  { from: 'now', to: 'now+1h', display: 'Next hour', section: 3 },
-  { from: 'now', to: 'now+3h', display: 'Next 3 hours', section: 3 },
-  { from: 'now', to: 'now+6h', display: 'Next 6 hours', section: 3 },
-  { from: 'now', to: 'now+12h', display: 'Next 12 hours', section: 3 },
-  { from: 'now', to: 'now+24h', display: 'Next 24 hours', section: 3 },
-  { from: 'now', to: 'now+2d', display: 'Next 2 days', section: 0 },
-  { from: 'now', to: 'now+7d', display: 'Next 7 days', section: 0 },
-  { from: 'now', to: 'now+30d', display: 'Next 30 days', section: 0 },
-  { from: 'now', to: 'now+90d', display: 'Next 90 days', section: 0 },
-  { from: 'now', to: 'now+6M', display: 'Next 6 months', section: 0 },
-  { from: 'now', to: 'now+1y', display: 'Next year', section: 0 },
-  { from: 'now', to: 'now+2y', display: 'Next 2 years', section: 0 },
-  { from: 'now', to: 'now+5y', display: 'Next 5 years', section: 0 },
+  { from: 'now', to: 'now+1m', display: '下一分钟', section: 3 },
+  { from: 'now', to: 'now+5m', display: '下一个 5 分钟', section: 3 },
+  { from: 'now', to: 'now+15m', display: '下一个 15 分钟', section: 3 },
+  { from: 'now', to: 'now+30m', display: '下一个 30 分钟', section: 3 },
+  { from: 'now', to: 'now+1h', display: '下一个 小时', section: 3 },
+  { from: 'now', to: 'now+3h', display: '下一个 3 小时', section: 3 },
+  { from: 'now', to: 'now+6h', display: '下一个 6 小时', section: 3 },
+  { from: 'now', to: 'now+12h', display: '下一个 12 小时', section: 3 },
+  { from: 'now', to: 'now+24h', display: '下一个 24 小时', section: 3 },
+  { from: 'now', to: 'now+2d', display: '下一个 2 天', section: 0 },
+  { from: 'now', to: 'now+7d', display: '下一个 7 天', section: 0 },
+  { from: 'now', to: 'now+30d', display: '下一个 30 天', section: 0 },
+  { from: 'now', to: 'now+90d', display: '下一个 90 天', section: 0 },
+  { from: 'now', to: 'now+6M', display: '下一个 6 个月', section: 0 },
+  { from: 'now', to: 'now+1y', display: '下一年', section: 0 },
+  { from: 'now', to: 'now+2y', display: '下 2 年', section: 0 },
+  { from: 'now', to: 'now+5y', display: '下 5 年', section: 0 },
 ];
 
 const rangeIndex: any = {};
@@ -137,7 +137,7 @@ export function describeTextRange(expr: any) {
     const amount = parseInt(parts[2], 10);
     const span = spans[unit];
     if (span) {
-      opt.display = isLast ? 'Last ' : 'Next ';
+      opt.display = isLast ? '最近 ' : '下一个 ';
       opt.display += amount + ' ' + span.display;
       opt.section = span.section;
       if (amount > 1) {

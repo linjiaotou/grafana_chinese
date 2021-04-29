@@ -4,7 +4,7 @@ import { Menu, MenuProps } from './Menu';
 import { GraphContextMenuHeader } from '..';
 
 export default {
-  title: 'General/Menu',
+  title: '通用/Menu',
   component: Menu,
   argTypes: {
     items: { control: { disable: true } },

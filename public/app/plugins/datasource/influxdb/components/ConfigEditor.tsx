@@ -196,7 +196,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
             <SecretFormField
               isConfigured={(secureJsonFields && secureJsonFields.password) as boolean}
               value={secureJsonData.password || ''}
-              label="Password"
+              label="密码"
               labelWidth={10}
               inputWidth={20}
               onReset={this.onResetPassword}

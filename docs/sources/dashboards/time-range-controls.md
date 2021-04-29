@@ -26,12 +26,8 @@ Here are some examples:
 | Last 5 minutes         | `now-5m`   | `now`      |
 | The day so far         | `now/d`    | `now`      |
 | This week              | `now/w`    | `now/w`    |
-| This week so far       | `now/w`    | `now`      |
-| This month             | `now/M`    | `now/M`    |
-| This month so far      | `now/M`    | `now`      |
+| Week to date           | `now/w`    | `now`      |
 | Previous Month         | `now-1M/M` | `now-1M/M` |
-| This year so far       | `now/Y`    | `now`      |
-| This Year              | `now/Y`    | `now/Y     |
 
 ## Common time range controls
 

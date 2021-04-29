@@ -62,7 +62,7 @@ describe('Test Datasource Query Editor', () => {
       <QueryEditor {...props} query={{ ...defaultQuery, scenarioId: 'grafana_api', stringInput: 'datasources' }} />
     );
     expect(await screen.findByText('Grafana API')).toBeInTheDocument();
-    expect(screen.getByText('Data Sources')).toBeInTheDocument();
+    expect(screen.getByText('数据源')).toBeInTheDocument();
 
     await fireEvent.keyDown(select, { keyCode: 40 });
     await userEvent.click(screen.getByText('Streaming Client'));

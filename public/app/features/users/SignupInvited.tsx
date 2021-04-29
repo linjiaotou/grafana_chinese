@@ -87,16 +87,16 @@ export const SignupInvitedPage: FC = () => {
               <Field invalid={!!errors.username} error={errors.username && errors.username.message} label="Username">
                 <Input placeholder="Username" name="username" ref={register({ required: 'Username is required' })} />
               </Field>
-              <Field invalid={!!errors.password} error={errors.password && errors.password.message} label="Password">
+              <Field invalid={!!errors.password} error={errors.password && errors.password.message} label="密码">
                 <Input
                   type="password"
-                  placeholder="Password"
+                  placeholder="密码"
                   name="password"
                   ref={register({ required: 'Password is required' })}
                 />
               </Field>
 
-              <Button type="submit">Sign Up</Button>
+              <Button type="submit">注册</Button>
             </>
           )}
         </Form>

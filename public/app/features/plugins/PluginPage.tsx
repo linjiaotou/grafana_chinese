@@ -425,7 +425,7 @@ function getPluginTabsNav(
       // Check for the dashboard pages
       if (find(meta.includes, { type: PluginIncludeType.dashboard })) {
         pages.push({
-          text: 'Dashboards',
+          text: '仪表盘',
           icon: 'apps',
           url: `${appSubUrl}${path}?page=${PAGE_ID_DASHBOARDS}`,
           id: PAGE_ID_DASHBOARDS,

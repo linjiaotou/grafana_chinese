@@ -4,14 +4,14 @@ import { config } from '../../../core/config';
 
 export function buildCategories(plugins: DataSourcePluginMeta[]): DataSourcePluginCategory[] {
   const categories: DataSourcePluginCategory[] = [
-    { id: 'tsdb', title: 'Time series databases', plugins: [] },
-    { id: 'logging', title: 'Logging & document databases', plugins: [] },
-    { id: 'tracing', title: 'Distributed tracing', plugins: [] },
+    { id: 'tsdb', title: '时间序列数据库', plugins: [] },
+    { id: 'logging', title: '日志和文档数据库', plugins: [] },
+    { id: 'tracing', title: '分布式追踪', plugins: [] },
     { id: 'sql', title: 'SQL', plugins: [] },
     { id: 'cloud', title: 'Cloud', plugins: [] },
-    { id: 'enterprise', title: 'Enterprise plugins', plugins: [] },
-    { id: 'iot', title: 'Industrial & IoT', plugins: [] },
-    { id: 'other', title: 'Others', plugins: [] },
+    { id: 'enterprise', title: '企业插件', plugins: [] },
+    { id: 'iot', title: '工业物联网', plugins: [] },
+    { id: 'other', title: '其它', plugins: [] },
   ].filter((item) => item);
 
   const categoryIndex: Record<string, DataSourcePluginCategory> = {};

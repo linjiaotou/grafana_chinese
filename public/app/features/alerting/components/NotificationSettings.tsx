@@ -8,16 +8,16 @@ interface Props extends NotificationSettingsProps {
 
 export const NotificationSettings: FC<Props> = ({ currentFormValues, imageRendererAvailable, register }) => {
   return (
-    <CollapsableSection label="Notification settings" isOpen={false}>
+    <CollapsableSection label="通知设置" isOpen={false}>
       <Field>
-        <Checkbox name="isDefault" ref={register} label="Default" description="Use this notification for all alerts" />
+        <Checkbox name="isDefault" ref={register} label="默认" description="对所有预警使用此通知" />
       </Field>
       <Field>
         <Checkbox
           name="settings.uploadImage"
           ref={register}
-          label="Include image"
-          description="Captures an image and include it in the notification"
+          label="包含图片"
+          description="捕获图片并将其包含在通知中"
         />
       </Field>
       {currentFormValues.uploadImage && !imageRendererAvailable && (
@@ -30,25 +30,24 @@ export const NotificationSettings: FC<Props> = ({ currentFormValues, imageRender
         <Checkbox
           name="disableResolveMessage"
           ref={register}
-          label="Disable Resolve Message"
-          description="Disable the resolve message [OK] that is sent when alerting state returns to false"
+          label="禁用解析消息"
+          description=" 当预警状态返回false时，禁用发送解析消息[OK]"
         />
       </Field>
       <Field>
         <Checkbox
           name="sendReminder"
           ref={register}
-          label="Send reminders"
-          description="Send additional notifications for triggered alerts"
+          label="发送提醒"
+          description="为触发的预警发送附加通知"
         />
       </Field>
       {currentFormValues.sendReminder && (
         <>
           <Field
-            label="Send reminder every"
-            description="Specify how often reminders should be sent, e.g. every 30s, 1m, 10m, 30m or 1h etc.
-            Alert reminders are sent after rules are evaluated. Therefore a reminder can never be sent more frequently
-            than a configured alert rule evaluation interval."
+            label="发送每一个提醒"
+            description="指定发送提醒的频率, 例如每30s, 1m, 10m, 30m 或者 1h 等等。
+            在计算规则之后发送预警提醒。因此，发送提醒的间隔不会比配置的预警规则计算间隔更短。"
           >
             <Input name="frequency" ref={register} width={8} />
           </Field>

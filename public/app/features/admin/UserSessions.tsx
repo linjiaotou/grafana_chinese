@@ -44,16 +44,16 @@ export class UserSessions extends PureComponent<Props, State> {
 
     return (
       <>
-        <h3 className="page-heading">Sessions</h3>
+        <h3 className="page-heading">会话</h3>
         <div className="gf-form-group">
           <div className="gf-form">
             <table className="filter-table form-inline">
               <thead>
                 <tr>
-                  <th>Last seen</th>
-                  <th>Logged on</th>
-                  <th>IP address</th>
-                  <th colSpan={2}>Browser &amp; OS</th>
+                  <th>最后上线</th>
+                  <th>登录时间</th>
+                  <th>IP地址</th>
+                  <th colSpan={2}>浏览器和操作系统</th>
                 </tr>
               </thead>
               <tbody>
@@ -67,11 +67,11 @@ export class UserSessions extends PureComponent<Props, State> {
                       <td>
                         <div className="pull-right">
                           <ConfirmButton
-                            confirmText="Confirm logout"
+                            confirmText="确认退出"
                             confirmVariant="destructive"
                             onConfirm={this.onSessionRevoke(session.id)}
                           >
-                            Force logout
+                            强制退出
                           </ConfirmButton>
                         </div>
                       </td>
@@ -83,14 +83,14 @@ export class UserSessions extends PureComponent<Props, State> {
           <div className={logoutFromAllDevicesClass}>
             {sessions.length > 0 && (
               <Button variant="secondary" onClick={this.showLogoutConfirmationModal(true)}>
-                Force logout from all devices
+                强制退出所有设备
               </Button>
             )}
             <ConfirmModal
               isOpen={showLogoutModal}
-              title="Force logout from all devices"
-              body="Are you sure you want to force logout from all devices?"
-              confirmText="Force logout"
+              title="强制退出所有设备"
+              body="您确定要从所有设备强制退出吗?"
+              confirmText="强制退出"
               onConfirm={this.onAllSessionsRevoke}
               onDismiss={this.showLogoutConfirmationModal(false)}
             />

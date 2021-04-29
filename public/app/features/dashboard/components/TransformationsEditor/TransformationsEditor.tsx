@@ -265,7 +265,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
 
                 return (
                   <FeatureInfoBox
-                    title="Transformations"
+                    title="转换"
                     className={css`
                       margin-bottom: ${this.props.theme.spacing.lg};
                     `}
@@ -275,11 +275,12 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
                     url={getDocsLink(DocsId.Transformations)}
                   >
                     <p>
-                      Transformations allow you to join, calculate, re-order, hide and rename your query results before
-                      being visualized. <br />
-                      Many transforms are not suitable if you&apos;re using the Graph visualization as it currently only
-                      supports time series. <br />
-                      It can help to switch to Table visualization to understand what a transformation is doing. <br />
+                      转换允许你在展示数据之前连接、计算、重新排序、隐藏和重命名你的查询结果。 <br />
+                      {/*Many transforms are not suitable if you&apos;re using the Graph visualization as it currently only*/}
+                      {/*supports time series. <br />*/}
+                      如果你正在使用图形可视化作为当前仅支持时间序列，许多转换是不合适的。<br />
+                      {/*It can help to switch to Table visualization to understand what a transformation is doing. <br />*/}
+                      它可以帮助切换到表可视化，以理解转换正在做什么。 <br />
                     </p>
                   </FeatureInfoBox>
                 );
@@ -338,7 +339,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
     const hasTransforms = transformations.length > 0;
 
     if (!hasTransforms && alert) {
-      return <PanelNotSupported message="Transformations can't be used on a panel with existing alerts" />;
+      return <PanelNotSupported message="不能在具有现有预警的面板上使用转换" />;
     }
 
     return (

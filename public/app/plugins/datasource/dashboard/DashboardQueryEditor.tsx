@@ -118,7 +118,7 @@ export class DashboardQueryEditor extends PureComponent<Props, State> {
     const dsname = panel.datasource ? panel.datasource : defaultDatasource;
 
     if (panel.targets.length === 1) {
-      return '1 query to ' + dsname;
+      return '1条查询到' + dsname;
     }
 
     return panel.targets.length + ' queries to ' + dsname;
@@ -167,9 +167,9 @@ export class DashboardQueryEditor extends PureComponent<Props, State> {
     return (
       <div>
         <div className="gf-form">
-          <div className="gf-form-label">Use results from panel</div>
+          <div className="gf-form-label">使用面板结果</div>
           <Select
-            placeholder="Choose Panel"
+            placeholder="选择面板"
             isSearchable={true}
             options={panels}
             value={selected}

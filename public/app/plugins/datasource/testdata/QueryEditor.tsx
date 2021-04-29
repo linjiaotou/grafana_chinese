@@ -19,8 +19,8 @@ import { NodeGraphEditor } from './components/NodeGraphEditor';
 
 const showLabelsFor = ['random_walk', 'predictable_pulse', 'predictable_csv_wave'];
 const endpoints = [
-  { value: 'datasources', label: 'Data Sources' },
-  { value: 'search', label: 'Search' },
+  { value: 'datasources', label: '数据源' },
+  { value: 'search', label: '搜索' },
   { value: 'annotations', label: 'Annotations' },
 ];
 

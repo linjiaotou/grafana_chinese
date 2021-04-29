@@ -159,7 +159,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
       <div className="gf-form-inline">
         <div className="gf-form">
           <InlineFormLabel width={9} tooltip={tooltip}>
-            Cache timeout
+            超时缓存
           </InlineFormLabel>
           <Input
             type="text"
@@ -187,12 +187,11 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
             width={9}
             tooltip={
               <>
-                The maximum data points per series. Used directly by some data sources and used in calculation of auto
-                interval. With streaming data this value is used for the rolling buffer.
+                每个连续的最大数据点. 直接用于某些数据源，用于计算自动间隔. 对于流数据，这个值用于滚动缓冲区.
               </>
             }
           >
-            Max data points
+            最大的数据点
           </InlineFormLabel>
           <Input
             type="number"
@@ -205,7 +204,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
           {isAuto && (
             <>
               <div className="gf-form-label query-segment-operator">=</div>
-              <div className="gf-form-label">Width of panel</div>
+              <div className="gf-form-label">面板的宽度</div>
             </>
           )}
         </div>
@@ -226,13 +225,12 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
               width={9}
               tooltip={
                 <>
-                  A lower limit for the interval. Recommended to be set to write frequency, for example <code>1m</code>{' '}
-                  if your data is written every minute. Default value can be set in data source settings for most data
-                  sources.
+                  时间间隔的下限. 建议设置为写频率, 例如 <code>1m</code>{' '}
+                  如果你的数据每分钟都被写入. 大多数数据源可以使用默认值.
                 </>
               }
             >
-              Min interval
+              最小时间间隔
             </InlineFormLabel>
             <Input
               type="text"
@@ -250,16 +248,16 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
               width={9}
               tooltip={
                 <>
-                  The evaluated Interval that is sent to data source and is used in <code>$__interval</code> and{' '}
+                  评估后的时间间隔被发送到数据源，并且被用于<code>$__interval</code> and{' '}
                   <code>$__interval_ms</code>
                 </>
               }
             >
-              Interval
+              时间间隔
             </InlineFormLabel>
             <InlineFormLabel width={6}>{realInterval}</InlineFormLabel>
             <div className="gf-form-label query-segment-operator">=</div>
-            <div className="gf-form-label">Max data points / time range</div>
+            <div className="gf-form-label">最大数据点/时间范围</div>
           </div>
         </div>
       </>
@@ -309,7 +307,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
       <QueryOperationRow
         id="Query options"
         index={0}
-        title="Query options"
+        title="查询选项"
         headerElement={this.renderCollapsedText(styles)}
         isOpen={isOpen}
         onOpen={this.onOpenOptions}
@@ -320,7 +318,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
         {this.renderCacheTimeoutOption()}
 
         <div className="gf-form">
-          <InlineFormLabel width={9}>Relative time</InlineFormLabel>
+          <InlineFormLabel width={9}>相对时间</InlineFormLabel>
           <Input
             type="text"
             className="width-6"
@@ -333,7 +331,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
         </div>
 
         <div className="gf-form">
-          <span className="gf-form-label width-9">Time shift</span>
+          <span className="gf-form-label width-9">时移</span>
           <Input
             type="text"
             className="width-6"

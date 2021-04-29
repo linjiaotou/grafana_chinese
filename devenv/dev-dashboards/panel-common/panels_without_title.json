@@ -233,7 +233,7 @@
       "thresholds": "",
       "timeFrom": null,
       "timeShift": "2h",
-      "title": "Panel Title",
+      "title": "面板标题",
       "type": "singlestat",
       "valueFontSize": "120%",
       "valueMaps": [

@@ -46,12 +46,12 @@ export class NewDashboardsFolder extends PureComponent<Props> {
     return (
       <Page navModel={this.props.navModel}>
         <Page.Contents>
-          <h3>New Dashboard Folder</h3>
+          <h3>新建仪表板文件夹</h3>
           <Form defaultValues={initialFormModel} onSubmit={this.onSubmit}>
             {({ register, errors }) => (
               <>
                 <Field
-                  label="Folder name"
+                  label="文件夹名称"
                   invalid={!!errors.folderName}
                   error={errors.folderName && errors.folderName.message}
                 >
@@ -63,7 +63,7 @@ export class NewDashboardsFolder extends PureComponent<Props> {
                     })}
                   />
                 </Field>
-                <Button type="submit">Create</Button>
+                <Button type="submit">创建</Button>
               </>
             )}
           </Form>

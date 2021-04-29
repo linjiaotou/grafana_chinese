@@ -290,8 +290,8 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
               onChangeTimeZone={updateTimeZoneForSession}
             />
             {!uiState.isPanelOptionsVisible && (
-              <ToolbarButton onClick={this.onTogglePanelOptions} tooltip="Open options pane" icon="angle-left">
-                Show options
+              <ToolbarButton onClick={this.onTogglePanelOptions} tooltip="打开选项面板" icon="angle-left">
+                显示选项
               </ToolbarButton>
             )}
           </HorizontalGroup>
@@ -305,33 +305,33 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
       <ToolbarButton
         icon="cog"
         onClick={this.onOpenDashboardSettings}
-        title="Open dashboard settings"
+        title="打开仪表盘设置"
         key="settings"
       />,
-      <ToolbarButton onClick={this.onDiscard} title="Undo all changes" key="discard">
-        Discard
+      <ToolbarButton onClick={this.onDiscard} title="取消所有更改" key="discard">
+        放弃
       </ToolbarButton>,
       this.props.panel.libraryPanel ? (
         <ToolbarButton
           onClick={this.onSaveLibraryPanel}
           variant="primary"
-          title="Apply changes and save library panel"
+          title="应用更改并保存面板库"
           key="save-panel"
         >
-          Save library panel
+          保存面板库
         </ToolbarButton>
       ) : (
-        <ToolbarButton onClick={this.onSaveDashboard} title="Apply changes and save dashboard" key="save">
-          Save
+        <ToolbarButton onClick={this.onSaveDashboard} title="应用更改并保存仪表盘" key="save">
+          保存
         </ToolbarButton>
       ),
       <ToolbarButton
         onClick={this.props.exitPanelEditor}
         variant="primary"
-        title="Apply changes and go back to dashboard"
+        title="应用更改并返回仪表板"
         key="apply"
       >
-        Apply
+        应用
       </ToolbarButton>,
     ];
 
@@ -407,7 +407,7 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
 
     return (
       <div className={styles.wrapper} aria-label={selectors.components.PanelEditor.General.content}>
-        <PageToolbar title={`${dashboard.title} / Edit Panel`} onGoBack={this.props.exitPanelEditor}>
+        <PageToolbar title={`${dashboard.title} / 编辑面板`} onGoBack={this.props.exitPanelEditor}>
           {this.renderEditorActions()}
         </PageToolbar>
         <div className={styles.verticalSplitPanesWrapper}>

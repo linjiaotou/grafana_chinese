@@ -109,7 +109,7 @@ func (hs *HTTPServer) GetDashboard(c *models.ReqContext) response.Response {
 		IsFolder:    dash.IsFolder,
 		FolderId:    dash.FolderId,
 		Url:         dash.GetUrl(),
-		FolderTitle: "General",
+		FolderTitle: "通用",
 	}
 
 	// lookup folder title
@@ -411,7 +411,7 @@ func (hs *HTTPServer) GetHomeDashboard(c *models.ReqContext) response.Response {
 	dash := dtos.DashboardFullWithMeta{}
 	dash.Meta.IsHome = true
 	dash.Meta.CanEdit = c.SignedInUser.HasRole(models.ROLE_EDITOR)
-	dash.Meta.FolderTitle = "General"
+	dash.Meta.FolderTitle = "通用"
 
 	jsonParser := json.NewDecoder(file)
 	if err := jsonParser.Decode(&dash.Dashboard); err != nil {

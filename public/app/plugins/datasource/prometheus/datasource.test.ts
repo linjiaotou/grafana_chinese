@@ -101,10 +101,9 @@ describe('PrometheusDatasource', () => {
 
   describe('Datasource metadata requests', () => {
     it('should perform a GET request with the default config', () => {
-      ds.metadataRequest('/foo', { bar: 'baz baz', foo: 'foo' });
+      ds.metadataRequest('/foo');
       expect(fetchMock.mock.calls.length).toBe(1);
       expect(fetchMock.mock.calls[0][0].method).toBe('GET');
-      expect(fetchMock.mock.calls[0][0].url).toContain('bar=baz%20baz&foo=foo');
     });
     it('should still perform a GET request with the DS HTTP method set to POST and not POST-friendly endpoint', () => {
       const postSettings = _.cloneDeep(instanceSettings);
@@ -118,11 +117,9 @@ describe('PrometheusDatasource', () => {
       const postSettings = _.cloneDeep(instanceSettings);
       postSettings.jsonData.httpMethod = 'POST';
       const promDs = new PrometheusDatasource(postSettings, templateSrvStub as any, timeSrvStub as any);
-      promDs.metadataRequest('api/v1/series', { bar: 'baz baz', foo: 'foo' });
+      promDs.metadataRequest('api/v1/series');
       expect(fetchMock.mock.calls.length).toBe(1);
       expect(fetchMock.mock.calls[0][0].method).toBe('POST');
-      expect(fetchMock.mock.calls[0][0].url).not.toContain('bar=baz%20baz&foo=foo');
-      expect(fetchMock.mock.calls[0][0].data).toEqual({ bar: 'baz baz', foo: 'foo' });
     });
   });
 

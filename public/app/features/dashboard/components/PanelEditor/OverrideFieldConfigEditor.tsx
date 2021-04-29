@@ -78,7 +78,7 @@ export const OverrideFieldConfigEditor: React.FC<Props> = (props) => {
       <Container padding="md">
         <ValuePicker
           icon="plus"
-          label="Add an override for"
+          label="为以下内容添加重写"
           variant="secondary"
           options={fieldMatchersUI
             .list()
@@ -95,13 +95,13 @@ export const OverrideFieldConfigEditor: React.FC<Props> = (props) => {
     <div aria-label={selectors.components.OverridesConfigEditor.content}>
       {config.overrides.length === 0 && (
         <FeatureInfoBox
-          title="Overrides"
+          title="重写"
           url={getDocsLink(DocsId.FieldConfigOverrides)}
           className={css`
             margin: ${theme.spacing.md};
           `}
         >
-          Field override rules give you a fine grained control over how your data is displayed.
+          字段重写规则为您提供了对数据显示方式的细粒度控制。
         </FeatureInfoBox>
       )}
 

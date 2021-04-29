@@ -350,10 +350,6 @@
             "type": "array",
             "description": "For data source plugins. Route headers adds HTTP headers to the proxied request."
           },
-          "body": {
-            "type": "object",
-            "description": "For data source plugins. Route headers set the body content and length to the proxied request."
-          },
           "tokenAuth": {
             "type": "object",
             "description": "For data source plugins. Token authentication section used with an OAuth API.",
@@ -361,32 +357,28 @@
             "properties": {
               "url": {
                 "type": "string",
-                "description": "URL to fetch the authentication token."
-              },
-              "scopes": {
-                "type": "string",
-                "description": ""
+                "description": "For data source plugins. URL to fetch the authentication token."
               },
               "params": {
                 "type": "object",
-                "description": "Parameters for the token authentication request.",
+                "description": "For data source plugins. Parameters for the token authentication request.",
                 "additionalProperties": false,
                 "properties": {
                   "grant_type": {
                     "type": "string",
-                    "description": "OAuth grant type"
+                    "description": "For data source plugins. OAuth grant type."
                   },
                   "client_id": {
                     "type": "string",
-                    "description": "OAuth client ID"
+                    "description": "For data source plugins. OAuth client id."
                   },
                   "client_secret": {
                     "type": "string",
-                    "description": "OAuth client secret. Usually populated by decrypting the secret from the SecureJson blob."
+                    "description": "For data source plugins. OAuth client secret. Usually populated by decrypting the secret from the SecureJson blob."
                   },
                   "resource": {
                     "type": "string",
-                    "description": "OAuth resource"
+                    "description": "For data source plugins. OAuth resource."
                   }
                 }
               }
@@ -399,36 +391,29 @@
             "properties": {
               "url": {
                 "type": "string",
-                "description": "URL to fetch the JWT token.",
+                "description": "For data source plugins. URL to fetch the JWT token.",
                 "format": "uri"
-              },
-              "scopes": {
-                "type": "string",
-                "description": ""
               },
               "params": {
                 "type": "object",
-                "description": "Parameters for the JWT token authentication request.",
+                "description": "For data source plugins. Parameters for the token authentication request.",
                 "additionalProperties": false,
                 "properties": {
-                  "scopes": {
-                    "type": "array",
-                    "description": "",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "token_uri": {
+                  "grant_type": {
                     "type": "string",
-                    "description": ""
+                    "description": "For data source plugins. OAuth grant type."
                   },
-                  "client_email": {
+                  "client_id": {
                     "type": "string",
-                    "description": ""
+                    "description": "For data source plugins. OAuth client id."
                   },
-                  "private_key": {
+                  "client_secret": {
                     "type": "string",
-                    "description": ""
+                    "description": "For data source plugins. OAuth client secret. Usually populated by decrypting the secret from the SecureJson blob."
+                  },
+                  "resource": {
+                    "type": "string",
+                    "description": "For data source plugins. OAuth resource."
                   }
                 }
               }

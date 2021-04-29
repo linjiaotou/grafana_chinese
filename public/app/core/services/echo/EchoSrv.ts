@@ -6,8 +6,8 @@ export const reportPerformance = (metric: string, value: number) => {
   getEchoSrv().addEvent<PerformanceEvent>({
     type: EchoEventType.Performance,
     payload: {
-      name: metric,
-      value: value,
+      metricName: metric,
+      duration: value,
     },
   });
 };

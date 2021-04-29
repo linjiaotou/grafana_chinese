@@ -32,7 +32,7 @@ export default class VariableQueryEditor extends PureComponent<Props> {
 
     return (
       <div className="gf-form-inline">
-        <InlineFormLabel width={10}>Query</InlineFormLabel>
+        <InlineFormLabel width={10}>查询</InlineFormLabel>
         <div className="gf-form-inline gf-form--grow">
           <TextArea
             defaultValue={query || ''}

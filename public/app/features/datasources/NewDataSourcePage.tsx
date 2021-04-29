@@ -81,7 +81,7 @@ class NewDataSourcePage extends PureComponent<Props> {
             target="_blank"
             rel="noopener"
           >
-            Find more data source plugins on grafana.com
+            在grafana.com查询更多的数据源插件
           </LinkButton>
         </div>
       </>
@@ -95,9 +95,9 @@ class NewDataSourcePage extends PureComponent<Props> {
       <Page navModel={navModel}>
         <Page.Contents isLoading={isLoading}>
           <div className="page-action-bar">
-            <FilterInput value={searchQuery} onChange={this.onSearchQueryChange} placeholder="Filter by name or type" />
+            <FilterInput value={searchQuery} onChange={this.onSearchQueryChange} placeholder="按照名称或类型筛选" />
             <div className="page-action-bar__spacer" />
-            <LinkButton href="datasources">Cancel</LinkButton>
+            <LinkButton href="datasources">取消</LinkButton>
           </div>
           {!searchQuery && (
             <PluginsErrorsInfo>
@@ -168,9 +168,9 @@ export function getNavModel(): NavModel {
   const main = {
     icon: 'database',
     id: 'datasource-new',
-    text: 'Add data source',
+    text: '添加数据源',
     href: 'datasources/new',
-    subTitle: 'Choose a data source type',
+    subTitle: '选择数据源类型',
   };
 
   return {

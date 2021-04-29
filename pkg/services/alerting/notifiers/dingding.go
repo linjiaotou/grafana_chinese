@@ -17,12 +17,12 @@ func init() {
 	alerting.RegisterNotifier(&alerting.NotifierPlugin{
 		Type:        "dingding",
 		Name:        "DingDing",
-		Description: "Sends HTTP POST request to DingDing",
-		Heading:     "DingDing settings",
+		Description: "向丁丁发送HTTP POST请求",
+		Heading:     "丁丁设置",
 		Factory:     newDingDingNotifier,
 		Options: []alerting.NotifierOption{
 			{
-				Label:        "Url",
+				Label:        "网址",
 				Element:      alerting.ElementTypeInput,
 				InputType:    alerting.InputTypeText,
 				Placeholder:  "https://oapi.dingtalk.com/robot/send?access_token=xxxxxxxxx",
@@ -30,16 +30,16 @@ func init() {
 				Required:     true,
 			},
 			{
-				Label:        "Message Type",
+				Label:        "消息类型",
 				Element:      alerting.ElementTypeSelect,
 				PropertyName: "msgType",
 				SelectOptions: []alerting.SelectOption{
 					{
 						Value: "link",
-						Label: "Link"},
+						Label: "链接"},
 					{
 						Value: "actionCard",
-						Label: "ActionCard",
+						Label: "行动卡",
 					},
 				},
 			},

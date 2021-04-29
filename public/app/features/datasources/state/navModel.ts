@@ -11,7 +11,7 @@ export function buildNavModel(dataSource: DataSourceSettings, plugin: GenericDat
     subTitle: `Type: ${pluginMeta.name}`,
     url: '',
     text: dataSource.name,
-    breadcrumbs: [{ title: 'Data Sources', url: 'datasources' }],
+    breadcrumbs: [{ title: '数据源', url: 'datasources' }],
     children: [
       {
         active: false,

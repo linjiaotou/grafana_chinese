@@ -196,7 +196,7 @@ export class QueryGroup extends PureComponent<Props, State> {
                 <Button
                   variant="secondary"
                   icon="question-circle"
-                  title="Open data source help"
+                  title="打开数据源帮助"
                   onClick={this.onOpenHelp}
                 />
               </div>
@@ -215,7 +215,7 @@ export class QueryGroup extends PureComponent<Props, State> {
                     onClick={onOpenQueryInspector}
                     aria-label={selectors.components.QueryTab.queryInspectorButton}
                   >
-                    Query inspector
+                      查询检查
                   </Button>
                 </div>
               )}
@@ -318,19 +318,19 @@ export class QueryGroup extends PureComponent<Props, State> {
             variant="secondary"
             aria-label={selectors.components.QueryTab.addQuery}
           >
-            Query
+            查询
           </Button>
         )}
         {isAddingMixed && this.renderMixedPicker()}
         {config.expressionsEnabled && this.isExpressionsSupported(dsSettings) && (
-          <Tooltip content="Experimental feature: queries could stop working in next version" placement="right">
+          <Tooltip content="实验特性:查询在下一个版本中可能停止工作" placement="right">
             <Button
               icon="plus"
               onClick={this.onAddExpressionClick}
               variant="secondary"
               className={styles.expressionButton}
             >
-              <span>Expression&nbsp;</span>
+              <span>表达式&nbsp;</span>
               <Icon name="exclamation-triangle" className="muted" size="sm" />
             </Button>
           </Tooltip>
@@ -352,7 +352,7 @@ export class QueryGroup extends PureComponent<Props, State> {
               <div className={styles.queriesWrapper}>{this.renderQueries(dsSettings)}</div>
               {this.renderAddQueryRow(dsSettings, styles)}
               {isHelpOpen && (
-                <Modal title="Data source help" isOpen={true} onDismiss={this.onCloseHelp}>
+                <Modal title="数据源帮助" isOpen={true} onDismiss={this.onCloseHelp}>
                   <PluginHelp plugin={dsSettings.meta} type="query_help" />
                 </Modal>
               )}

@@ -193,7 +193,7 @@ export class MysqlDatasource {
         },
       })
       .pipe(
-        mapTo({ status: 'success', message: 'Database Connection OK' }),
+        mapTo({ status: 'success', message: '数据库连接成功' }),
         catchError((err) => {
           console.error(err);
           if (err.data && err.data.message) {

@@ -41,15 +41,15 @@ export class UsersActionBar extends PureComponent<Props> {
             inputClassName="gf-form-input width-20"
             value={searchQuery}
             onChange={setUsersSearchQuery}
-            placeholder="Search user by login, email or name"
+            placeholder="使用账号邮箱或者名称查询用户"
           />
           {pendingInvitesCount > 0 && (
             <div style={{ marginLeft: '1rem' }}>
-              <RadioButtonGroup value={showInvites ? 'invites' : 'users'} options={options} onChange={onShowInvites} />
+              <RadioButtonGroup value={showInvites ? '邀请' : '用户列表'} options={options} onChange={onShowInvites} />
             </div>
           )}
           <div className="page-action-bar__spacer" />
-          {canInvite && <LinkButton href="org/users/invite">Invite</LinkButton>}
+          {canInvite && <LinkButton href="org/users/invite">邀请</LinkButton>}
           {externalUserMngLinkUrl && (
             <LinkButton href={externalUserMngLinkUrl} target="_blank" rel="noopener">
               {externalUserMngLinkName}

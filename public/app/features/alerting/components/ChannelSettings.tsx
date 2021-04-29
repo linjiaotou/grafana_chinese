@@ -20,7 +20,7 @@ export const ChannelSettings: FC<Props> = ({
   resetSecureField,
 }) => {
   return (
-    <CollapsableSection label={`Optional ${selectedChannel.heading}`} isOpen={false}>
+    <CollapsableSection label={`选项 ${selectedChannel.heading}`} isOpen={false}>
       {selectedChannel.info !== '' && <InfoBox>{selectedChannel.info}</InfoBox>}
       <NotificationChannelOptions
         selectedChannelOptions={selectedChannel.options.filter((o) => !o.required)}

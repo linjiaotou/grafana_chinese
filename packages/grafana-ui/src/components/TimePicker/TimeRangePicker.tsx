@@ -131,7 +131,7 @@ export class UnthemedTimeRangePicker extends PureComponent<TimeRangePickerProps,
 
 const ZoomOutTooltip = () => (
   <>
-    Time range zoom out <br /> CTRL+Z
+    缩小时间范围 <br /> CTRL+Z
   </>
 );
 

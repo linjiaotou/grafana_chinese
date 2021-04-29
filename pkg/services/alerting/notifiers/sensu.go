@@ -48,7 +48,7 @@ func init() {
 				PropertyName: "username",
 			},
 			{
-				Label:        "Password",
+				Label:        "密码",
 				Element:      alerting.ElementTypeInput,
 				InputType:    alerting.InputTypePassword,
 				PropertyName: "passsword ",

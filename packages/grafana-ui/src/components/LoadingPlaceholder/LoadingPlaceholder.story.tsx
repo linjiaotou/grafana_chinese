@@ -4,7 +4,7 @@ import { withCenteredStory } from '../../utils/storybook/withCenteredStory';
 import mdx from './LoadingPlaceholder.mdx';
 
 export default {
-  title: 'General/LoadingPlaceholder',
+  title: '通用/LoadingPlaceholder',
   component: LoadingPlaceholder,
   decorators: [withCenteredStory],
   parameters: {

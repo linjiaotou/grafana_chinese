@@ -97,7 +97,7 @@ export class GettingStarted extends PureComponent<PanelProps, State> {
         ) : (
           <>
             <div className={styles.dismiss}>
-              <div onClick={this.dismiss}>Remove this panel</div>
+              <div onClick={this.dismiss}>移除这个面板</div>
             </div>
             {currentStep === steps.length - 1 && (
               <div className={cx(styles.backForwardButtons, styles.previous)} onClick={this.onPreviousClick}>

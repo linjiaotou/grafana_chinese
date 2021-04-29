@@ -37,7 +37,7 @@ export const PluginListPage: React.FC<Props> = ({
 
   const linkButton = {
     href: 'https://grafana.com/plugins?utm_source=grafana_plugin_list',
-    title: 'Find more plugins on Grafana.com',
+    title: '在Grafana.com上查找更多插件',
   };
 
   return (

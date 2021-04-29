@@ -71,19 +71,19 @@ export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
   return (
     <div style={{ maxWidth: '600px' }}>
       <h3 className="dashboard-settings__header" aria-label={selectors.pages.Dashboard.Settings.General.title}>
-        General
+        通用
       </h3>
       <div className="gf-form-group">
-        <Field label="Name">
+        <Field label="名称">
           <Input name="title" onBlur={onBlur} defaultValue={dashboard.title} />
         </Field>
-        <Field label="Description">
+        <Field label="描述">
           <Input name="description" onBlur={onBlur} defaultValue={dashboard.description} />
         </Field>
-        <Field label="Tags">
+        <Field label="标签">
           <TagsInput tags={dashboard.tags} onChange={onTagsChange} />
         </Field>
-        <Field label="Folder">
+        <Field label="文件夹">
           <FolderPicker
             initialTitle={dashboard.meta.folderTitle}
             initialFolderId={dashboard.meta.folderId}
@@ -112,7 +112,7 @@ export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
         timezone={dashboard.timezone}
       />
 
-      <CollapsableSection label="Panel options" isOpen={true}>
+      <CollapsableSection label="面板选项" isOpen={true}>
         <Field
           label="Graph tooltip"
           description="Controls tooltip and hover highlight behavior across different panels"

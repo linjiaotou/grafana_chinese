@@ -5,10 +5,10 @@ import { stylesFactory, useTheme } from '@grafana/ui';
 import lightBackground from './img/background_light.svg';
 
 const helpOptions = [
-  { value: 0, label: 'Documentation', href: 'https://grafana.com/docs/grafana/latest' },
-  { value: 1, label: 'Tutorials', href: 'https://grafana.com/tutorials' },
-  { value: 2, label: 'Community', href: 'https://community.grafana.com' },
-  { value: 3, label: 'Public Slack', href: 'http://slack.grafana.com' },
+  { value: 0, label: '文档', href: 'https://grafana.com/docs/grafana/latest' },
+  { value: 1, label: '学习指南', href: 'https://grafana.com/tutorials' },
+  { value: 2, label: '社区', href: 'https://community.grafana.com' },
+  { value: 3, label: '公共时间', href: 'http://slack.grafana.com' },
 ];
 
 export const WelcomeBanner: FC = () => {
@@ -16,9 +16,10 @@ export const WelcomeBanner: FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Welcome to Grafana</h1>
+      {/*<h1 className={styles.title}>Welcome to Grafana</h1>*/}
+      <h1 className={styles.title}>欢迎使用Grafana</h1>
       <div className={styles.help}>
-        <h3 className={styles.helpText}>Need help?</h3>
+        <h3 className={styles.helpText}>需要帮助?</h3>
         <div className={styles.helpLinks}>
           {helpOptions.map((option, index) => {
             return (

@@ -4,7 +4,7 @@ title = "Add support for Explore queries"
 
 # Add support for Explore queries
 
-This guide explains how to improve support for [Explore]({{< relref "../../explore/_index.md" >}}) in an existing data source plugin.
+This guide explains how to improve support for [Explore]({{< relref "../../explore/_index.md" >}}) to an existing data source plugin.
 
 This guide assumes that you're already familiar with how to [Build a data source plugin]({{< relref "/tutorials/build-a-data-source-plugin.md" >}}).
 
@@ -85,20 +85,25 @@ The query editor for Explore is similar to the query editor for the data source 
    };
    ```
 
-## Selecting preferred visualisation
+## Support multiple Explore modes
 
-Explore should by default select a reasonable visualization for your data so users do not have to tweak and play with the visualizations and just focus on querying. This usually works fairly well and Explore can figure out whether the returned data is time series data or logs or something else.
+Explore lets you query any data source, regardless of whether it returns metrics or logs. You can change which type of query you want to make, by setting the _Explore mode_.
 
-If this does not work for you or you want to show some data in a specific visualization, add a hint to your returned data frame using the `preferredVisualisationType` meta attribute.
+The query modes that the plugin supports are defined in the [plugin.json]({{< relref "metadata.md" >}}) file.
 
-You can construct a data frame with specific metadata:
+The query mode is available on the `props` object for both the query editor and the start page. For example, here's how you can change the query editor based on the currently selected mode:
+
 ```
-const firstResult = new MutableDataFrame({
-    fields: [...],
-    meta: {
-        preferredVisualisationType: 'logs',
-    },
-});
-```
+export default (props: Props) => {
+  const { query, exploreMode } = props;
 
-For possible options, refer to [PreferredVisualisationType](https://grafana.com/docs/grafana/latest/packages_api/data/preferredvisualisationtype/).
+  switch (exploreMode) {
+    case ExploreMode.Metrics:
+      return <MetricsQueryField query={query} />;
+    case ExploreMode.Logs:
+      return <LogsQueryField query={query} />;
+    default:
+      return <p>Unsupported mode</p>;
+  }
+}
+```

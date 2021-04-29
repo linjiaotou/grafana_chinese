@@ -9,7 +9,7 @@ export class HelpModal extends React.PureComponent {
       { keys: ['g', 'h'], description: 'Go to Home Dashboard' },
       { keys: ['g', 'p'], description: 'Go to Profile' },
       { keys: ['s', 'o'], description: 'Open search' },
-      { keys: ['esc'], description: 'Exit edit/setting views' },
+      { keys: ['esc'], description: '退出 编辑/设置 视图' },
     ],
     Dashboard: [
       { keys: ['mod+s'], description: 'Save dashboard' },

@@ -12,7 +12,7 @@ import (
 	"github.com/grafana/grafana/pkg/util"
 )
 
-const RootFolderName = "General"
+const RootFolderName = "通用"
 
 // Typed errors
 var (

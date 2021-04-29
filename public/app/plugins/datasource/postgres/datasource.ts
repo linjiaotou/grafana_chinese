@@ -182,7 +182,7 @@ export class PostgresDatasource {
   testDatasource() {
     return this.metricFindQuery('SELECT 1', {})
       .then((res: any) => {
-        return { status: 'success', message: 'Database Connection OK' };
+        return { status: 'success', message: '数据库连接成功' };
       })
       .catch((err: any) => {
         console.error(err);

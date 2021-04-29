@@ -26,7 +26,7 @@ export const DataLinks = (props: Props) => {
 
   return (
     <>
-      <h3 className="page-heading">Data links</h3>
+      <h3 className="page-heading">数据链</h3>
 
       <div className={styles.infoText}>
         Add links to existing fields. Links will be shown in log row details next to the field value.

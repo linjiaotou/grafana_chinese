@@ -56,10 +56,10 @@ func updatePreferencesFor(orgID, userID, teamId int64, dtoCmd *dtos.UpdatePrefsC
 	}
 
 	if err := bus.Dispatch(&saveCmd); err != nil {
-		return response.Error(500, "Failed to save preferences", err)
+		return response.Error(500, "未能保存首选项", err)
 	}
 
-	return response.Success("Preferences updated")
+	return response.Success("已更新首选项")
 }
 
 // GET /api/org/preferences

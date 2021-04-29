@@ -18,8 +18,7 @@ export const UpgradePage: React.FC<Props> = ({ navModel }) => {
     <Page navModel={navModel}>
       <Page.Contents>
         <UpgradeInfo
-          editionNotice="You are running the open-source version of Grafana.
-        You have to install the Enterprise edition in order enable Enterprise features."
+          editionNotice="你运行的是Grafana的开源版本。为了启用企业功能，您必须安装企业版。"
         />
       </Page.Contents>
     </Page>
@@ -45,7 +44,7 @@ export const UpgradeInfo: React.FC<UpgradeInfoProps> = ({ editionNotice }) => {
   `;
 
   return (
-    <LicenseChrome header="Grafana Enterprise" subheader="Get your free trial" editionNotice={editionNotice}>
+    <LicenseChrome header="Grafana企业版" subheader="获得免费试用" editionNotice={editionNotice}>
       <div className={columnStyles}>
         <FeatureInfo />
         <ServiceInfo />
@@ -57,7 +56,7 @@ export const UpgradeInfo: React.FC<UpgradeInfoProps> = ({ editionNotice }) => {
 const GetEnterprise: React.FC = () => {
   return (
     <div style={{ marginTop: '40px', marginBottom: '30px' }}>
-      <h2 style={titleStyles}>Get Grafana Enterprise</h2>
+      <h2 style={titleStyles}>获得Grafana企业版</h2>
       <CallToAction />
       <p style={{ paddingTop: '12px' }}>
         You can use the trial version for free for <strong>30 days</strong>. We will remind you about it{' '}
@@ -74,7 +73,7 @@ const CallToAction: React.FC = () => {
       size="lg"
       href="https://grafana.com/contact?about=grafana-enterprise&utm_source=grafana-upgrade-page"
     >
-      Contact us and get a free trial
+      联系我们，并获得免费试用
     </LinkButton>
   );
 };
@@ -82,7 +81,7 @@ const CallToAction: React.FC = () => {
 const ServiceInfo: React.FC = () => {
   return (
     <div>
-      <h4>At your service</h4>
+      <h4>乐意效劳</h4>
 
       <List>
         <Item title="Enterprise Plugins" image="public/img/licensing/plugin_enterprise.svg" />
@@ -114,7 +113,7 @@ const ServiceInfo: React.FC = () => {
 const FeatureInfo: React.FC = () => {
   return (
     <div style={{ paddingRight: '11px' }}>
-      <h4>Enhanced Functionality</h4>
+      <h4>增强功能</h4>
       <FeatureListing />
     </div>
   );

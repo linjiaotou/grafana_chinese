@@ -163,7 +163,8 @@ func tryOAuthAutoLogin(c *models.ReqContext) bool {
 
 func (hs *HTTPServer) LoginAPIPing(c *models.ReqContext) response.Response {
 	if c.IsSignedIn || c.IsAnonymous {
-		return response.JSON(200, "Logged in")
+// 		return response.JSON(200, "Logged in")
+		return response.JSON(200, "已登录")
 	}
 
 	return response.Error(401, "Unauthorized", nil)
@@ -235,7 +236,8 @@ func (hs *HTTPServer) LoginPost(c *models.ReqContext, cmd dtos.LoginCommand) res
 	}
 
 	result := map[string]interface{}{
-		"message": "Logged in",
+// 		"message": "Logged in",
+		"message": "已登录",
 	}
 
 	if redirectTo := c.GetCookie("redirect_to"); len(redirectTo) > 0 {

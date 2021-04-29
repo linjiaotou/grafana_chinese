@@ -148,7 +148,7 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
             <small>You need to save dashboard for the delete to take effect.</small>
           </div>
         }
-        confirmText="Delete Alert"
+        confirmText="删除预警"
         onDismiss={onDismiss}
         onConfirm={() => {
           delete panel.alert;
@@ -191,10 +191,10 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
     }
 
     const model = {
-      title: 'Panel has no alert rule defined',
+      title: '面板没有定义预警规则',
       buttonIcon: 'bell' as IconName,
       onClick: this.onAddAlert,
-      buttonTitle: 'Create Alert',
+      buttonTitle: '创建预警',
     };
 
     return (
@@ -205,7 +205,7 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
               {alert && hasTransformations && (
                 <Alert
                   severity={AppNotificationSeverity.Error}
-                  title="Transformations are not supported in alert queries"
+                  title="预警查询中不支持转换"
                 />
               )}
 
@@ -213,13 +213,13 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
               {alert && (
                 <HorizontalGroup>
                   <Button onClick={() => this.onToggleModal('showStateHistory')} variant="secondary">
-                    State history
+                    状态历史
                   </Button>
                   <Button onClick={() => this.onToggleModal('showTestRule')} variant="secondary">
-                    Test rule
+                    检测规则
                   </Button>
                   <Button onClick={() => this.onToggleModal('showDeleteConfirmation')} variant="destructive">
-                    Delete
+                    删除
                   </Button>
                 </HorizontalGroup>
               )}

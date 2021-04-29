@@ -65,13 +65,13 @@ export const addDataSource = (config?: Partial<AddDataSourceConfig>) => {
           e2e().get('[placeholder=user]').type(basicAuthUser);
         }
         if (basicAuthPassword) {
-          e2e().get('[placeholder=Password]').type(basicAuthPassword);
+          e2e().get('[placeholder=密码]').type(basicAuthPassword);
         }
       });
   }
 
   if (skipTlsVerify) {
-    e2e().contains('label', 'Skip TLS Verify').scrollIntoView().click();
+    e2e().contains('label', '跳过TLS验证').scrollIntoView().click();
   }
 
   form();

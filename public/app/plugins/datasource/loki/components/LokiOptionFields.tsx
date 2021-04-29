@@ -83,7 +83,7 @@ export function LokiOptionFields(props: LokiOptionFieldsProps) {
         )}
         aria-label="Query type field"
       >
-        <InlineFormLabel width="auto">Query type</InlineFormLabel>
+        <InlineFormLabel width="auto">查询类型</InlineFormLabel>
 
         <RadioButtonGroup
           options={queryTypeOptions}

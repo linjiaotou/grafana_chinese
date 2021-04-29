@@ -6,7 +6,7 @@ import { NotificationChannelDTO, NotificationChannelType } from 'app/types';
 export const defaultValues: NotificationChannelDTO = {
   id: -1,
   name: '',
-  type: { value: 'email', label: 'Email' },
+  type: { value: 'email', label: '邮件' },
   sendReminder: false,
   disableResolveMessage: false,
   frequency: '15m',

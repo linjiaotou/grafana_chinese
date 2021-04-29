@@ -25,7 +25,7 @@ export const HttpProxySettings: React.FC<HttpSettingsBaseProps> = ({ dataSourceC
       </div>
       <div className="gf-form-inline">
         <Switch
-          label="Skip TLS Verify"
+          label="跳过TLS验证"
           labelClass="width-13"
           checked={dataSourceConfig.jsonData.tlsSkipVerify || false}
           onChange={(event) => onChange({ ...dataSourceConfig.jsonData, tlsSkipVerify: event!.currentTarget.checked })}

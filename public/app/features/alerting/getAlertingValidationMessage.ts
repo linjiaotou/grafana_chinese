@@ -37,11 +37,11 @@ export const getAlertingValidationMessage = async (
   }
 
   if (alertingNotSupported === targets.length) {
-    return 'The datasource does not support alerting queries';
+    return '数据源不支持警报查询';
   }
 
   if (templateVariablesNotSupported === targets.length) {
-    return 'Template variables are not supported in alert queries';
+    return '在警告查询中不支持模板变量';
   }
 
   return '';

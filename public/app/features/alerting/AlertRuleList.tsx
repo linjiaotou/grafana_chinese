@@ -42,13 +42,13 @@ export type Props = OwnProps & ConnectedProps<typeof connector>;
 
 export class AlertRuleListUnconnected extends PureComponent<Props, any> {
   stateFilters = [
-    { label: 'All', value: 'all' },
-    { label: 'OK', value: 'ok' },
-    { label: 'Not OK', value: 'not_ok' },
-    { label: 'Alerting', value: 'alerting' },
-    { label: 'No Data', value: 'no_data' },
-    { label: 'Paused', value: 'paused' },
-    { label: 'Pending', value: 'pending' },
+    { label: '全部', value: 'all' },
+    { label: '良好', value: 'ok' },
+    { label: '不太好', value: 'not_ok' },
+    { label: '告警中', value: 'alerting' },
+    { label: '没有数据', value: 'no_data' },
+    { label: '已暂停', value: 'paused' },
+    { label: '挂起', value: 'pending' },
   ];
 
   componentDidMount() {
@@ -114,13 +114,13 @@ export class AlertRuleListUnconnected extends PureComponent<Props, any> {
               <FilterInput
                 labelClassName="gf-form--has-input-icon gf-form--grow"
                 inputClassName="gf-form-input"
-                placeholder="Search alerts"
+                placeholder="检索预警"
                 value={search}
                 onChange={this.onSearchQueryChange}
               />
             </div>
             <div className="gf-form">
-              <label className="gf-form-label">States</label>
+              <label className="gf-form-label">状态</label>
 
               <div className="width-13">
                 <Select
@@ -133,11 +133,11 @@ export class AlertRuleListUnconnected extends PureComponent<Props, any> {
             <div className="page-action-bar__spacer" />
             {config.featureToggles.ngalert && (
               <LinkButton variant="primary" href="alerting/new">
-                Add NG Alert
+                添加NG预警
               </LinkButton>
             )}
             <Button variant="secondary" onClick={this.onOpenHowTo}>
-              How to add an alert
+              如何添加预警
             </Button>
           </div>
           <VerticalGroup spacing="none">

@@ -14,14 +14,14 @@ const labelWidth = 12;
 export class QueryEditor extends PureComponent<Props> {
   queryTypes: Array<SelectableValue<GrafanaQueryType>> = [
     {
-      label: 'Random Walk',
+      label: '随机游动',
       value: GrafanaQueryType.RandomWalk,
-      description: 'Random signal within the selected time range',
+      description: '所选时间范围内的随机标志',
     },
     {
-      label: 'Live Measurements',
+      label: '实时测量',
       value: GrafanaQueryType.LiveMeasurements,
-      description: 'Stream real-time measurements from Grafana',
+      description: 'Grafana的实时测量数据流',
     },
   ];
 
@@ -66,7 +66,7 @@ export class QueryEditor extends PureComponent<Props> {
       measurements = {};
     }
     const names: Array<SelectableValue<string>> = [
-      { value: '', label: 'All measurements', description: 'Show every measurement streamed to this channel' },
+      { value: '', label: '所有测量值', description: '显示到此通道流的每一个测量值' },
     ];
 
     let info: LiveMeasurements | undefined = undefined;
@@ -152,7 +152,7 @@ export class QueryEditor extends PureComponent<Props> {
     return (
       <>
         <div className="gf-form">
-          <InlineField label="Query type" grow={true} labelWidth={labelWidth}>
+          <InlineField label="查询类型" grow={true} labelWidth={labelWidth}>
             <Select
               options={this.queryTypes}
               value={this.queryTypes.find((v) => v.value === query.queryType) || this.queryTypes[0]}

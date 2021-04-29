@@ -17,8 +17,10 @@ export const TutorialCard: FC<Props> = ({ card }) => {
   return (
     <a className={styles.card} onClick={(event: MouseEvent<HTMLAnchorElement>) => handleTutorialClick(event, card)}>
       <div className={cardContent}>
-        <div className={styles.type}>{card.type}</div>
-        <div className={styles.heading}>{card.done ? 'complete' : card.heading}</div>
+        {/*<div className={styles.type}>{card.type}</div>*/}
+        {/*<div className={styles.heading}>{card.done ? 'complete' : card.heading}</div>*/}
+        <div className={styles.type}>{'指南'}</div>
+        <div className={styles.heading}>{card.done ? '完成' : card.heading}</div>
         <h4>{card.title}</h4>
         <div className={styles.info}>{card.info}</div>
         <Icon className={iconStyle(theme, card.done)} name={card.icon} size="xxl" />

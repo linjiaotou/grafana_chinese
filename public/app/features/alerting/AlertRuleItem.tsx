@@ -34,7 +34,7 @@ const AlertRuleItem = ({ rule, search, onTogglePause }: Props) => {
           <span key="text" className={`${rule.stateClass}`}>
             {renderText(rule.stateText)}{' '}
           </span>
-          for {rule.stateAge}
+          计 {rule.stateAge}
         </span>
         {rule.info ? renderText(rule.info) : null}
       </Card.Meta>
@@ -45,10 +45,10 @@ const AlertRuleItem = ({ rule, search, onTogglePause }: Props) => {
           icon={rule.state === 'paused' ? 'play' : 'pause'}
           onClick={onTogglePause}
         >
-          {rule.state === 'paused' ? 'Resume' : 'Pause'}
+          {rule.state === 'paused' ? '恢复' : '暂停'}
         </Button>
         <LinkButton key="edit" variant="secondary" href={ruleUrl} icon="cog">
-          Edit alert
+          编辑预警
         </LinkButton>
       </Card.Actions>
     </Card>

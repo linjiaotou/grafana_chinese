@@ -26,7 +26,7 @@ export const SaveDashboardAsModal: React.FC<
       {!state.error && (
         <Modal
           isOpen={true}
-          title="Save dashboard as..."
+          title="保存仪表盘为..."
           icon="copy"
           onDismiss={onDismiss}
           className={css`

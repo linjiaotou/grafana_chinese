@@ -33,7 +33,7 @@ export const useDashboardSave = (dashboard: DashboardModel) => {
 
       // important that these happen before location redirect below
       appEvents.emit(CoreEvents.dashboardSaved, dashboard);
-      appEvents.emit(AppEvents.alertSuccess, ['Dashboard saved']);
+      appEvents.emit(AppEvents.alertSuccess, ['仪表盘已保存']);
 
       const newUrl = locationUtil.stripBaseFromUrl(state.value.url);
       const currentPath = location.path;

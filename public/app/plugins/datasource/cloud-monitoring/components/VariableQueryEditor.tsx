@@ -324,7 +324,7 @@ export class CloudMonitoringVariableQueryEditor extends PureComponent<Props, Var
     if (this.state.loading) {
       return (
         <div className="gf-form max-width-21">
-          <span className="gf-form-label width-10 query-keyword">Query Type</span>
+          <span className="gf-form-label width-10 query-keyword">查询类型</span>
           <div className="gf-form-select-wrapper max-width-12">
             <select className="gf-form-input">
               <option>Loading...</option>
@@ -340,7 +340,7 @@ export class CloudMonitoringVariableQueryEditor extends PureComponent<Props, Var
           value={this.state.selectedQueryType}
           options={this.queryTypes}
           onChange={(value) => this.onQueryTypeChange(value)}
-          label="Query Type"
+          label="查询类型"
         />
         {this.renderQueryTypeSwitch(this.state.selectedQueryType)}
       </>

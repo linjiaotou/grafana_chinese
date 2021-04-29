@@ -213,7 +213,7 @@ export class QueryEditorRow extends PureComponent<Props, State> {
       );
     }
 
-    return <div>Data source plugin does not export any Query Editor component</div>;
+    return <div>数据源插件没有导出任何查询编辑器组件</div>;
   };
 
   onToggleEditMode = (e: React.MouseEvent, props: QueryOperationRowRenderProps) => {
@@ -278,24 +278,24 @@ export class QueryEditorRow extends PureComponent<Props, State> {
     return (
       <HorizontalGroup width="auto">
         {hasEditorHelp && (
-          <QueryOperationAction title="Toggle data source help" icon="question-circle" onClick={this.onToggleHelp} />
+          <QueryOperationAction title="切换数据源帮助" icon="question-circle" onClick={this.onToggleHelp} />
         )}
         {hasTextEditMode && (
           <QueryOperationAction
-            title="Toggle text edit mode"
+            title="切换文本编辑模式"
             icon="pen"
             onClick={(e) => {
               this.onToggleEditMode(e, props);
             }}
           />
         )}
-        <QueryOperationAction title="Duplicate query" icon="copy" onClick={this.onCopyQuery} />
+        <QueryOperationAction title="复制查询" icon="copy" onClick={this.onCopyQuery} />
         <QueryOperationAction
-          title="Disable/enable query"
+          title="禁用/使用 查询"
           icon={isDisabled ? 'eye-slash' : 'eye'}
           onClick={this.onDisableQuery}
         />
-        <QueryOperationAction title="Remove query" icon="trash-alt" onClick={this.onRemoveQuery} />
+        <QueryOperationAction title="删除查询" icon="trash-alt" onClick={this.onRemoveQuery} />
       </HorizontalGroup>
     );
   };

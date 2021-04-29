@@ -89,7 +89,7 @@ export const TimeRangeForm: React.FC<Props> = (props) => {
 
   return (
     <>
-      <Field label="From" invalid={from.invalid} error={errorMessage}>
+      <Field label="开始时间" invalid={from.invalid} error={errorMessage}>
         <Input
           onClick={(event) => event.stopPropagation()}
           onFocus={onFocus}
@@ -99,7 +99,7 @@ export const TimeRangeForm: React.FC<Props> = (props) => {
           value={from.value}
         />
       </Field>
-      <Field label="To" invalid={to.invalid} error={errorMessage}>
+      <Field label="结束时间" invalid={to.invalid} error={errorMessage}>
         <Input
           onClick={(event) => event.stopPropagation()}
           onFocus={onFocus}
@@ -110,7 +110,7 @@ export const TimeRangeForm: React.FC<Props> = (props) => {
         />
       </Field>
       <Button aria-label="TimePicker submit button" onClick={onApply}>
-        Apply time range
+        应用时间范围
       </Button>
 
       <TimePickerCalendar

@@ -177,7 +177,7 @@ export const TimePickerContentWithScreenSize: React.FC<PropsWithScreenSize> = (p
             {!hideQuickRanges && (
               <>
                 <TimeRangeList
-                  title="Relative time ranges"
+                  title="相对时间范围"
                   options={quickOptions}
                   onSelect={onChange}
                   value={value}
@@ -185,7 +185,7 @@ export const TimePickerContentWithScreenSize: React.FC<PropsWithScreenSize> = (p
                 />
                 <div className={styles.spacing} />
                 <TimeRangeList
-                  title="Other quick ranges"
+                  title="其他快速范围"
                   options={otherOptions}
                   onSelect={onChange}
                   value={value}
@@ -227,7 +227,7 @@ const NarrowScreenForm: React.FC<FormProps> = (props) => {
           }
         }}
       >
-        <TimePickerTitle>Absolute time range</TimePickerTitle>
+        <TimePickerTitle>绝对时间范围</TimePickerTitle>
         {!hideQuickRanges && <Icon name={!collapsed ? 'angle-up' : 'angle-down'} />}
       </div>
       {!collapsed && (
@@ -237,7 +237,7 @@ const NarrowScreenForm: React.FC<FormProps> = (props) => {
           </div>
           {showHistory && (
             <TimeRangeList
-              title="Recently used absolute ranges"
+              title="最近使用的绝对范围"
               options={historyOptions}
               onSelect={onChange}
               value={value}
@@ -259,7 +259,7 @@ const FullScreenForm: React.FC<FormProps> = (props) => {
     <>
       <div className={styles.container}>
         <div aria-label="TimePicker absolute time range" className={styles.title}>
-          <TimePickerTitle>Absolute time range</TimePickerTitle>
+          <TimePickerTitle>绝对时间范围</TimePickerTitle>
         </div>
         <TimeRangeForm
           value={props.value}
@@ -293,8 +293,7 @@ const EmptyRecentList = memo(() => {
     <div className={styles.container}>
       <div>
         <span>
-          It looks like you haven&apos;t used this time picker before. As soon as you enter some time intervals,
-          recently used intervals will appear here.
+          看起来你以前没有用过这个时间选择器。只要你输入一些时间间隔，最近使用的间隔将出现在这里。
         </span>
       </div>
       <div>
@@ -303,9 +302,9 @@ const EmptyRecentList = memo(() => {
           href="https://grafana.com/docs/grafana/latest/dashboards/time-range-controls"
           target="_new"
         >
-          Read the documentation
+          阅读文档
         </a>
-        <span> to find out more about how to enter custom time ranges.</span>
+        <span>以了解更多关于如何输入自定义时间范围的信息.</span>
       </div>
     </div>
   );

@@ -74,49 +74,49 @@ function getStateDisplayModel(state: string) {
   switch (state) {
     case 'ok': {
       return {
-        text: 'OK',
+        text: '良好',
         iconClass: 'heart',
         stateClass: 'alert-state-ok',
       };
     }
     case 'alerting': {
       return {
-        text: 'ALERTING',
+        text: '预警中',
         iconClass: 'heart-break',
         stateClass: 'alert-state-critical',
       };
     }
     case 'no_data': {
       return {
-        text: 'NO DATA',
+        text: '没有数据',
         iconClass: 'question-circle',
         stateClass: 'alert-state-warning',
       };
     }
     case 'paused': {
       return {
-        text: 'PAUSED',
+        text: '已暂停',
         iconClass: 'pause',
         stateClass: 'alert-state-paused',
       };
     }
     case 'pending': {
       return {
-        text: 'PENDING',
+        text: '挂起',
         iconClass: 'exclamation-triangle',
         stateClass: 'alert-state-warning',
       };
     }
     case 'unknown': {
       return {
-        text: 'UNKNOWN',
+        text: '未知状态',
         iconClass: 'question-circle',
         stateClass: 'alert-state-paused',
       };
     }
   }
 
-  throw { message: 'Unknown alert state' };
+  throw { message: '未知的预警状态' };
 }
 
 function joinEvalMatches(matches: any, separator: string) {

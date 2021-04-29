@@ -16,8 +16,8 @@ func init() {
 	alerting.RegisterNotifier(&alerting.NotifierPlugin{
 		Type:        "kafka",
 		Name:        "Kafka REST Proxy",
-		Description: "Sends notifications to Kafka Rest Proxy",
-		Heading:     "Kafka settings",
+		Description: "发送通知给 Kafka Rest Proxy",
+		Heading:     "Kafka 设置",
 		Factory:     NewKafkaNotifier,
 		Options: []alerting.NotifierOption{
 			{
@@ -29,7 +29,7 @@ func init() {
 				Required:     true,
 			},
 			{
-				Label:        "Topic",
+				Label:        "主题",
 				Element:      alerting.ElementTypeInput,
 				InputType:    alerting.InputTypeText,
 				Placeholder:  "topic1",

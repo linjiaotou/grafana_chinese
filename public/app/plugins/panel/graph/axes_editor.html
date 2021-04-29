@@ -1,11 +1,11 @@
 <div class="editor-row">
   <div class="gf-form-group" ng-repeat="yaxis in ctrl.panel.yaxes">
-    <h5 class="section-heading" ng-show="$index === 0">Left Y</h5>
-    <h5 class="section-heading" ng-show="$index === 1">Right Y</h5>
+    <h5 class="section-heading" ng-show="$index === 0">左 Y</h5>
+    <h5 class="section-heading" ng-show="$index === 1">右 Y</h5>
 
     <gf-form-switch
       class="gf-form"
-      label="Show"
+      label="显示"
       label-class="width-6"
       checked="yaxis.show"
       on-change="ctrl.render()"
@@ -14,7 +14,7 @@
     <div ng-if="yaxis.show">
       <div class="gf-form gf-form--grow">
         <label class="gf-form-label width-6">
-          Unit
+          单位
 				  <info-popover mode="right-normal">The default unit used when not defined by the datasource or in the Fields or Overrides configuration.</info-popover>
         </label>
         <unit-picker onChange="ctrl.setUnitFormat(yaxis)" value="yaxis.format" class="flex-grow-1" />
@@ -22,7 +22,7 @@
     </div>
 
     <div class="gf-form">
-      <label class="gf-form-label width-6">Scale</label>
+      <label class="gf-form-label width-6">比例（Scale）</label>
       <div class="gf-form-select-wrapper max-width-20">
         <select
           class="gf-form-input"
@@ -34,7 +34,7 @@
     </div>
 
     <div class="gf-form">
-      <label class="gf-form-label width-6">Y-Min</label>
+      <label class="gf-form-label width-6">Y-最小值</label>
       <input
         type="text"
         class="gf-form-input"
@@ -46,7 +46,7 @@
       />
     </div>
     <div class="gf-form">
-      <label class="gf-form-label width-6">Y-Max</label>
+      <label class="gf-form-label width-6">Y-最大值</label>
       <input
         type="text"
         class="gf-form-input"
@@ -60,7 +60,7 @@
 
     <div ng-if="yaxis.show">
       <div class="gf-form">
-        <label class="gf-form-label width-6">Decimals</label>
+        <label class="gf-form-label width-6">位数</label>
         <input
           type="number"
           class="gf-form-input width-5"
@@ -75,7 +75,7 @@
       </div>
 
       <div class="gf-form">
-        <label class="gf-form-label width-6">Label</label>
+        <label class="gf-form-label width-6">标签</label>
         <input
           type="text"
           class="gf-form-input max-width-20"
@@ -88,10 +88,10 @@
   </div>
 
   <div class="gf-form-group">
-    <h5 class="section-heading">Y-Axes</h5>
+    <h5 class="section-heading">Y-轴</h5>
     <gf-form-switch
       class="gf-form"
-      label="Align Y-Axes"
+      label="Y-轴对齐"
       label-class="width-6"
       switch-class="width-5"
       checked="ctrl.panel.yaxis.align"
@@ -99,7 +99,7 @@
     ></gf-form-switch>
     <div class="gf-form" ng-show="ctrl.panel.yaxis.align">
       <label class="gf-form-label width-6">
-        Level
+        级别
       </label>
       <input
         type="number"
@@ -115,17 +115,17 @@
   </div>
 
   <div class="gf-form-group" aria-label="{{ctrl.selectors.xAxisSection}}">
-    <h5 class="section-heading">X-Axis</h5>
+    <h5 class="section-heading">X-轴</h5>
     <gf-form-switch
       class="gf-form"
-      label="Show"
+      label="显示"
       label-class="width-6"
       checked="ctrl.panel.xaxis.show"
       on-change="ctrl.render()"
     ></gf-form-switch>
 
     <div class="gf-form">
-      <label class="gf-form-label width-6">Mode</label>
+      <label class="gf-form-label width-6">模式</label>
       <div class="gf-form-select-wrapper max-width-15">
         <select
           class="gf-form-input"

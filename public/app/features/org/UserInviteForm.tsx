@@ -20,9 +20,9 @@ import { appEvents } from 'app/core/core';
 import { AppEvents, locationUtil } from '@grafana/data';
 
 const roles = [
-  { label: 'Viewer', value: OrgRole.Viewer },
-  { label: 'Editor', value: OrgRole.Editor },
-  { label: 'Admin', value: OrgRole.Admin },
+  { label: '浏览者', value: OrgRole.Viewer },
+  { label: '编辑者', value: OrgRole.Editor },
+  { label: '管理员', value: OrgRole.Admin },
 ];
 
 interface FormModel {

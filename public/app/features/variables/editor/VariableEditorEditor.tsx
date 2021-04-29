@@ -125,7 +125,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props> {
         <form aria-label="Variable editor Form" onSubmit={this.onHandleSubmit}>
           <VerticalGroup spacing="lg">
             <VerticalGroup spacing="none">
-              <VariableSectionHeader name="General" />
+              <VariableSectionHeader name="通用" />
               <InlineFieldRow>
                 <VariableTextField
                   value={this.props.editor.name}

@@ -19,7 +19,7 @@ const newLink = {
 } as DashboardLink;
 
 const linkTypeOptions = [
-  { value: 'dashboards', label: 'Dashboards' },
+  { value: 'dashboards', label: '仪表盘' },
   { value: 'link', label: 'Link' },
 ];
 

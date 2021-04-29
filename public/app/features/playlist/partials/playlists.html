@@ -56,21 +56,21 @@
   <div ng-if="ctrl.playlists.length === 0">
     <div ng-if="ctrl.canEditPlaylists">
       <empty-list-cta
-        title="'There are no playlists created yet'"
+        title="'目前还没有创建播放列表'"
         buttonIcon="'plus'"
         buttonLink="'playlists/create'"
-        buttonTitle="'Create Playlist'"
-        proTip="'You can use playlists to cycle dashboards on TVs without user control'"
+        buttonTitle="'创建播放列表'"
+        proTip="'你可以在没有用户控制的情况下，使用播放列表让仪表盘在TVs上滚动'"
         proTipLink="'http://docs.grafana.org/reference/playlist/'"
-        proTipLinkTitle="'Learn more'"
+        proTipLinkTitle="'了解更多'"
         proTipTarget="'_blank'" />
     </div>
     <div class="grafana-info-box" ng-if="!ctrl.canEditPlaylists">
-      <h5>There are no playlists created yet</h5>
+      <h5>目前还没有创建播放列表</h5>
       <p>Unfortunately you don't have permission to create playlists.</p>
     </div>
   </div>
-  
+
 </div>
 
 <footer />

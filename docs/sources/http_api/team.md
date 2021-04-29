@@ -42,7 +42,6 @@ The `name` parameter returns a single team if the parameter matches the `name` f
 HTTP/1.1 200
 Content-Type: application/json
 
-{
   "totalCount": 1,
   "teams": [
     {

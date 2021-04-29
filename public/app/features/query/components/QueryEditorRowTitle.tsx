@@ -89,7 +89,7 @@ export const QueryEditorRowTitle: React.FC<Props> = ({
         <button
           className={styles.queryNameWrapper}
           aria-label={selectors.components.QueryEditorRow.title(query.refId)}
-          title="Edit query name"
+          title="编辑查询名称"
           onClick={onEditQuery}
           data-testid="query-name-div"
         >

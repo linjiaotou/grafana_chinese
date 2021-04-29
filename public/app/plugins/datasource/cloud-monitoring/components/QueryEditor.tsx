@@ -78,7 +78,7 @@ export class QueryEditor extends PureComponent<Props, State> {
     return (
       <>
         <div className="gf-form-inline">
-          <label className="gf-form-label query-keyword width-9">Query Type</label>
+          <label className="gf-form-label query-keyword width-9">查询类型</label>
           <Segment
             value={[...queryTypes, ...variableOptionGroup.options].find((qt) => qt.value === queryType)}
             options={[

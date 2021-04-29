@@ -115,7 +115,7 @@ export class UserProfile extends PureComponent<Props, State> {
                   onChange={this.onUserLoginChange}
                 />
                 <UserProfileRow
-                  label="Password"
+                  label="密码"
                   value="********"
                   inputType="password"
                   locked={user.isExternal}

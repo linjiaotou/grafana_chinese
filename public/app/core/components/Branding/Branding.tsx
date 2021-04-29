@@ -39,13 +39,14 @@ export class Branding {
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
   static AppTitle = 'Grafana';
-  static LoginTitle = 'Welcome to Grafana';
+  // static LoginTitle = 'Welcome to Grafana';
+  static LoginTitle = '欢迎使用 Grafana';
   static GetLoginSubTitle = () => {
     const slogans = [
-      "Don't get in the way of the data",
-      'Your single pane of glass',
-      'Built better together',
-      'Democratising data',
+      "充分利用数据",
+      '您唯一的玻璃面板',
+      '一起构建美好',
+      '使数据大众化',
     ];
     const count = slogans.length;
     return slogans[Math.floor(Math.random() * count)];
