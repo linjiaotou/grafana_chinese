@@ -154,7 +154,7 @@ class UnThemedConfirmButton extends PureComponent<Props, State> {
         )}
         <span className={confirmButtonClass}>
           <Button size={size} variant="link" onClick={this.onClickCancel}>
-            Cancel
+            取消
           </Button>
           <Button size={size} variant={confirmButtonVariant} onClick={this.onConfirm}>
             {confirmText}

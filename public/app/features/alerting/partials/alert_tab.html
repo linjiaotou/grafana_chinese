@@ -14,7 +14,7 @@
         </info-popover>
       </div>
       <div class="gf-form">
-        <span class="gf-form-label width-9">Evaluate every</span>
+        <span class="gf-form-label width-9">评估一次每</span>
         <input
           class="gf-form-input max-width-6"
           type="text"
@@ -23,7 +23,7 @@
         />
       </div>
       <div class="gf-form max-width-11">
-        <label class="gf-form-label width-5">For</label>
+        <label class="gf-form-label width-5">指定时间段</label>
         <input
           type="text"
           class="gf-form-input max-width-6 gf-form-input--has-help-icon"
@@ -55,7 +55,7 @@
           options="ctrl.evalOperators"
           custom="false"
         ></metric-segment-model>
-        <span class="gf-form-label query-keyword width-5" ng-if="$index===0">WHEN</span>
+        <span class="gf-form-label query-keyword width-5" ng-if="$index===0">满足条件</span>
       </div>
       <div class="gf-form">
         <query-part-editor
@@ -64,7 +64,7 @@
           handle-event="ctrl.handleReducerPartEvent(conditionModel, $event)"
         >
         </query-part-editor>
-        <span class="gf-form-label query-keyword">OF</span>
+        <span class="gf-form-label query-keyword">当</span>
       </div>
       <div class="gf-form">
         <query-part-editor
@@ -90,7 +90,7 @@
           ng-model="conditionModel.evaluator.params[0]"
           ng-change="ctrl.evaluatorParamsChanged()"
         />
-        <label class="gf-form-label query-keyword" ng-show="conditionModel.evaluator.params.length === 2">TO</label>
+        <label class="gf-form-label query-keyword" ng-show="conditionModel.evaluator.params.length === 2">至</label>
         <input
           class="gf-form-input max-width-9"
           type="number"

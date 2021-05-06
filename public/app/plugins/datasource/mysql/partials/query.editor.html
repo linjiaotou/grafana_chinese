@@ -12,15 +12,15 @@
   <div ng-if="!ctrl.target.rawQuery">
     <div class="gf-form-inline">
       <div class="gf-form">
-        <label class="gf-form-label query-keyword width-6">FROM</label>
+        <label class="gf-form-label query-keyword width-6">表名</label>
         <metric-segment segment="ctrl.tableSegment" get-options="ctrl.getTableSegments()" on-change="ctrl.tableChanged()"></metric-segment>
 
-        <label class="gf-form-label query-keyword width-7">Time column</label>
+        <label class="gf-form-label query-keyword width-7">时间列</label>
         <metric-segment segment="ctrl.timeColumnSegment" get-options="ctrl.getTimeColumnSegments()" on-change="ctrl.timeColumnChanged()"></metric-segment>
 
         <label class="gf-form-label query-keyword width-9">
-          Metric column
-          <info-popover mode="right-normal">Column to be used as metric name for the value column.</info-popover>
+          指标列
+          <info-popover mode="right-normal">该列用作值列的指标名称。</info-popover>
         </label>
         <metric-segment segment="ctrl.metricColumnSegment" get-options="ctrl.getMetricColumnSegments()" on-change="ctrl.metricColumnChanged()"></metric-segment>
       </div>
@@ -34,7 +34,7 @@
     <div class="gf-form-inline" ng-repeat="selectParts in ctrl.selectParts">
       <div class="gf-form">
         <label class="gf-form-label query-keyword width-6">
-          <span ng-show="$index === 0">SELECT</span>&nbsp;
+          <span ng-show="$index === 0">选择</span>&nbsp;
         </label>
       </div>
 
@@ -59,7 +59,7 @@
 
     <div class="gf-form-inline">
       <div class="gf-form">
-        <label class="gf-form-label query-keyword width-6">WHERE</label>
+        <label class="gf-form-label query-keyword width-6">查询条件</label>
       </div>
 
       <div class="gf-form" ng-repeat="part in ctrl.whereParts">
@@ -80,7 +80,7 @@
     <div class="gf-form-inline">
       <div class="gf-form">
         <label class="gf-form-label query-keyword width-6">
-          <span>GROUP BY</span>
+          <span>分组依据</span>
         </label>
 
         <sql-part-editor  ng-repeat="part in ctrl.groupParts"
@@ -102,27 +102,27 @@
 
   <div class="gf-form-inline">
     <div class="gf-form">
-      <label class="gf-form-label query-keyword">Format as</label>
+      <label class="gf-form-label query-keyword">格式化为</label>
       <div class="gf-form-select-wrapper">
         <select class="gf-form-input gf-size-auto" ng-model="ctrl.target.format" ng-options="f.value as f.text for f in ctrl.formats" ng-change="ctrl.refresh()"></select>
       </div>
     </div>
     <div class="gf-form">
       <label class="gf-form-label query-keyword pointer" ng-click="ctrl.toggleEditorMode()" ng-show="ctrl.panelCtrl.panel.type !== 'table'">
-        <span ng-show="ctrl.target.rawQuery">Query Builder</span>
-        <span ng-hide="ctrl.target.rawQuery">Edit SQL</span>
+        <span ng-show="ctrl.target.rawQuery">查询生成器</span>
+        <span ng-hide="ctrl.target.rawQuery">编辑 SQL</span>
       </label>
     </div>
     <div class="gf-form">
       <label class="gf-form-label query-keyword pointer" ng-click="ctrl.showHelp = !ctrl.showHelp">
-        Show Help
+        显示帮助
         <icon name="'angle-down'" ng-show="ctrl.showHelp" style="margin-top: 3px;"></icon>
         <icon name="'angle-right'" ng-hide="ctrl.showHelp" style="margin-top: 3px;"></icon>
       </label>
     </div>
     <div class="gf-form" ng-show="ctrl.lastQueryMeta">
       <label class="gf-form-label query-keyword pointer" ng-click="ctrl.showLastQuerySQL = !ctrl.showLastQuerySQL">
-        Generated SQL
+        生成的SQL
         <icon name="'angle-down'" ng-show="ctrl.showLastQuerySQL" style="margin-top: 3px;"></icon>
         <icon name="'angle-right'" ng-hide="ctrl.showLastQuerySQL" style="margin-top: 3px;"></icon>
       </label>

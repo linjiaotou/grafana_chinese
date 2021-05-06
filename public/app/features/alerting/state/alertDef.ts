@@ -15,7 +15,7 @@ const alertQueryDef = new QueryPartDef({
   defaultParams: ['#A', '15m', 'now', 'avg'],
 });
 
-const conditionTypes = [{ text: 'Query', value: 'query' }];
+const conditionTypes = [{ text: '查询', value: 'query' }];
 
 const alertStateSortScore = {
   alerting: 1,
@@ -26,43 +26,43 @@ const alertStateSortScore = {
 };
 
 const evalFunctions = [
-  { text: 'IS ABOVE', value: 'gt' },
-  { text: 'IS BELOW', value: 'lt' },
-  { text: 'IS OUTSIDE RANGE', value: 'outside_range' },
-  { text: 'IS WITHIN RANGE', value: 'within_range' },
-  { text: 'HAS NO VALUE', value: 'no_value' },
+  { text: '是否大于', value: 'gt' },
+  { text: '是否小于', value: 'lt' },
+  { text: '是否超出范围', value: 'outside_range' },
+  { text: '是否在范围内', value: 'within_range' },
+  { text: '没有值', value: 'no_value' },
 ];
 
 const evalOperators = [
-  { text: 'OR', value: 'or' },
-  { text: 'AND', value: 'and' },
+  { text: '或者', value: 'or' },
+  { text: '并且', value: 'and' },
 ];
 
 const reducerTypes = [
-  { text: 'avg()', value: 'avg' },
-  { text: 'min()', value: 'min' },
-  { text: 'max()', value: 'max' },
-  { text: 'sum()', value: 'sum' },
-  { text: 'count()', value: 'count' },
-  { text: 'last()', value: 'last' },
-  { text: 'median()', value: 'median' },
-  { text: 'diff()', value: 'diff' },
-  { text: 'diff_abs()', value: 'diff_abs' },
-  { text: 'percent_diff()', value: 'percent_diff' },
-  { text: 'percent_diff_abs()', value: 'percent_diff_abs' },
-  { text: 'count_non_null()', value: 'count_non_null' },
+  { text: '平均()', value: 'avg' },
+  { text: '最小值()', value: 'min' },
+  { text: '最大值()', value: 'max' },
+  { text: '求和()', value: 'sum' },
+  { text: '计数()', value: 'count' },
+  { text: '最近的()', value: 'last' },
+  { text: '中间值()', value: 'median' },
+  { text: '比较差异()', value: 'diff' },
+  { text: '比较绝对差异()', value: 'diff_abs' },
+  { text: '比较百分比差异()', value: 'percent_diff' },
+  { text: '比较百分比绝对差异()', value: 'percent_diff_abs' },
+  { text: '统计不是null的数量', value: 'count_non_null' },
 ];
 
 const noDataModes = [
-  { text: 'Alerting', value: 'alerting' },
-  { text: 'No Data', value: 'no_data' },
-  { text: 'Keep Last State', value: 'keep_state' },
-  { text: 'Ok', value: 'ok' },
+  { text: '预警中', value: 'alerting' },
+  { text: '没有数据', value: 'no_data' },
+  { text: '保持上次的状态', value: 'keep_state' },
+  { text: '良好', value: 'ok' },
 ];
 
 const executionErrorModes = [
-  { text: 'Alerting', value: 'alerting' },
-  { text: 'Keep Last State', value: 'keep_state' },
+  { text: '预警中', value: 'alerting' },
+  { text: '保持上次的状态', value: 'keep_state' },
 ];
 
 function createReducerPart(model: any) {

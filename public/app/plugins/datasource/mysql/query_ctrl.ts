@@ -55,8 +55,8 @@ export class MysqlQueryCtrl extends QueryCtrl {
     this.updateProjection();
 
     this.formats = [
-      { text: 'Time series', value: 'time_series' },
-      { text: 'Table', value: 'table' },
+      { text: '时间序列', value: 'time_series' },
+      { text: '表格', value: 'table' },
     ];
 
     if (!this.target.rawSql) {
@@ -158,10 +158,11 @@ export class MysqlQueryCtrl extends QueryCtrl {
   toggleEditorMode() {
     if (this.target.rawQuery) {
       appEvents.emit(CoreEvents.showConfirmModal, {
-        title: 'Warning',
-        text2: 'Switching to query builder may overwrite your raw SQL.',
+        title: '警告',
+        text2: '切换到查询生成器可能会覆盖原始SQL.',
         icon: 'exclamation-triangle',
-        yesText: 'Switch',
+        yesText: '切换',
+        noText: '取消',
         onConfirm: () => {
           this.target.rawQuery = !this.target.rawQuery;
         },

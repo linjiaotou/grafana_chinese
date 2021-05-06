@@ -281,7 +281,7 @@ const Footer = memo<Props>(({ onClose, onApply }) => {
         Apply time range
       </Button>
       <Button variant="secondary" onClick={onClose}>
-        Cancel
+        取消
       </Button>
     </div>
   );

@@ -25,7 +25,7 @@ export const SaveDashboardButton: React.FC<SaveDashboardButtonProps> = ({ dashbo
             }}
             aria-label={selectors.pages.Dashboard.Settings.General.saveDashBoard}
           >
-            Save dashboard
+            保存仪表盘
           </Button>
         );
       }}
@@ -54,7 +54,7 @@ export const SaveDashboardAsButton: React.FC<SaveDashboardButtonProps & { varian
               variant={variant}
               aria-label={selectors.pages.Dashboard.Settings.General.saveAsDashBoard}
             >
-              Save As...
+              另存为...
             </Button>
           </FullWidthButtonContainer>
         );

@@ -59,7 +59,7 @@ export const FilterPopup: FC<Props> = ({ column: { preFilteredRows, filterValue,
                 Ok
               </Button>
               <Button size="sm" variant="secondary" onClick={onCancel}>
-                Cancel
+                取消
               </Button>
             </HorizontalGroup>
             {clearFilterVisible && (

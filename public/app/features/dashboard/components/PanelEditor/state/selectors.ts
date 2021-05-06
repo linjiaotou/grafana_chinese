@@ -22,23 +22,23 @@ export const getPanelEditorTabs = memoizeOne((location: LocationState, plugin?: 
 
     tabs.push({
       id: PanelEditorTabId.Query,
-      text: 'Query',
+      text: '数据源',
       icon: 'database',
       active: false,
     });
 
-    tabs.push({
+    /*tabs.push({
       id: PanelEditorTabId.Transform,
-      text: 'Transform',
+      text: '转换',
       icon: 'process',
       active: false,
-    });
+    });*/
   }
 
   if (getConfig().alertingEnabled && plugin.meta.id === 'graph') {
     tabs.push({
       id: PanelEditorTabId.Alert,
-      text: 'Alert',
+      text: '预警规则',
       icon: 'bell',
       active: false,
     });
