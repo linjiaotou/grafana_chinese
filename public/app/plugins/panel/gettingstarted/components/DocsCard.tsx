@@ -17,7 +17,7 @@ export const DocsCard: FC<Props> = ({ card }) => {
     <div className={styles.card}>
       <div className={cardContent}>
         <a href={`${card.href}?utm_source=grafana_gettingstarted`}>
-          <div className={styles.heading}>{card.done ? 'complete' : card.heading}</div>
+          <div className={styles.heading}>{card.done ? '完成' : card.heading}</div>
           <h4 className={styles.title}>{card.title}</h4>
           <div>
             <Icon className={iconStyle(theme, card.done)} name={card.icon} size="xxl" />

@@ -170,7 +170,7 @@ export class DashboardPage extends PureComponent<Props, State> {
 
     if (!panel) {
       // Panel not found
-      this.props.notifyApp(createErrorNotification(`Panel with id ${urlPanelId} not found`));
+      this.props.notifyApp(createErrorNotification(`没有找到id为${urlPanelId}的面板`));
       // Clear url state
       this.props.updateLocation({
         query: {

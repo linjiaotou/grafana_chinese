@@ -296,7 +296,7 @@ export class GraphCtrl extends MetricsPanelCtrl {
     const range = getDataTimeRange(this.dataList);
 
     if (range) {
-      dataWarning.actionText = 'Zoom to data';
+      dataWarning.actionText = '缩放数据';
       dataWarning.action = () => {
         getLocationSrv().update({
           partial: true,
