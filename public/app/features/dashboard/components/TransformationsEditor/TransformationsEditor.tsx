@@ -265,7 +265,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
 
                 return (
                   <FeatureInfoBox
-                    title="转换"
+                    title="Transform"
                     className={css`
                       margin-bottom: ${this.props.theme.spacing.lg};
                     `}

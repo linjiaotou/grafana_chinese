@@ -12,7 +12,7 @@ export interface Props {
   onChange: (tags: string[]) => void;
 }
 
-export const TagsInput: FC<Props> = ({ placeholder = 'New tag (enter key to add)', tags = [], onChange }) => {
+export const TagsInput: FC<Props> = ({ placeholder = '新建标签(输入键添加)', tags = [], onChange }) => {
   const [newTagName, setNewName] = useState('');
   const styles = useStyles(getStyles);
 
@@ -59,7 +59,7 @@ export const TagsInput: FC<Props> = ({ placeholder = 'New tag (enter key to add)
               size="md"
               disabled={newTagName.length === 0}
             >
-              Add
+              添加
             </Button>
           }
         />

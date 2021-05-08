@@ -25,9 +25,9 @@ export const DeleteDashboardModal: React.FC<DeleteDashboardModalProps> = ({ hide
       body={modalBody}
       onConfirm={onRestoreDashboard}
       onDismiss={hideModal}
-      title="Delete"
+      title="删除"
       icon="trash-alt"
-      confirmText="Delete"
+      confirmText="删除"
     />
   );
 };
@@ -36,15 +36,14 @@ const getModalBody = (panels: PanelModel[], title: string) => {
   const totalAlerts = sumBy(panels, (panel) => (panel.alert ? 1 : 0));
   return totalAlerts > 0 ? (
     <>
-      <p>Do you want to delete this dashboard?</p>
+      <p>是否要删除该仪表板?</p>
       <p>
-        This dashboard contains {totalAlerts} alert{totalAlerts > 1 ? 's' : ''}. Deleting this dashboard will also
-        delete those alerts
+        这个仪表盘包含 {totalAlerts} 预警{totalAlerts > 1 ? 's' : ''}. 删除这个仪表盘也会删除这些预警
       </p>
     </>
   ) : (
     <>
-      <p>Do you want to delete this dashboard?</p>
+      <p>是否要删除该仪表盘?</p>
       <p>{title}</p>
     </>
   );

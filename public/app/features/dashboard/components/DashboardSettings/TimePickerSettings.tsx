@@ -52,8 +52,8 @@ export class TimePickerSettings extends PureComponent<Props, State> {
 
   render() {
     return (
-      <CollapsableSection label="Time options" isOpen={true}>
-        <Field label="Timezone" aria-label={selectors.components.TimeZonePicker.container}>
+      <CollapsableSection label="时间选项" isOpen={true}>
+        <Field label="时区" aria-label={selectors.components.TimeZonePicker.container}>
           <TimeZonePicker
             includeInternal={true}
             value={this.props.timezone}
@@ -66,8 +66,8 @@ export class TimePickerSettings extends PureComponent<Props, State> {
           onRefreshIntervalChange={this.props.onRefreshIntervalChange}
         />
         <Field
-          label="Now delay now"
-          description="Enter 1m to ignore the last minute (because it can contain incomplete metrics)"
+          label="现在延迟"
+          description="输入1m以忽略最后一分钟 (因为它可以包含不完整的指标)"
         >
           <Input
             invalid={!this.state.isNowDelayValid}
@@ -76,7 +76,7 @@ export class TimePickerSettings extends PureComponent<Props, State> {
             defaultValue={this.props.nowDelay}
           />
         </Field>
-        <Field label="Hide time picker">
+        <Field label="隐藏时间选择器">
           <Switch value={!!this.props.timePickerHidden} onChange={this.onHideTimePickerChange} />
         </Field>
       </CollapsableSection>

@@ -12,9 +12,9 @@ interface Props {
 }
 
 const GRAPH_TOOLTIP_OPTIONS = [
-  { value: 0, label: 'Default' },
-  { value: 1, label: 'Shared crosshair' },
-  { value: 2, label: 'Shared Tooltip' },
+  { value: 0, label: '默认' },
+  { value: 1, label: '共享十字光标' },
+  { value: 2, label: '共享工具提示' },
 ];
 
 export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
@@ -64,8 +64,8 @@ export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
   };
 
   const editableOptions = [
-    { label: 'Editable', value: true },
-    { label: 'Read-only', value: false },
+    { label: '可编辑', value: true },
+    { label: '只读', value: false },
   ];
 
   return (
@@ -94,8 +94,8 @@ export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
         </Field>
 
         <Field
-          label="Editable"
-          description="Set to read-only to disable all editing. Reload the dashboard for changes to take effect"
+          label="可编辑"
+          description="设置为只读以禁用所有编辑。重新加载仪表盘以使更改生效"
         >
           <RadioButtonGroup value={dashboard.editable} options={editableOptions} onChange={onEditableChange} />
         </Field>
@@ -114,8 +114,8 @@ export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
 
       <CollapsableSection label="面板选项" isOpen={true}>
         <Field
-          label="Graph tooltip"
-          description="Controls tooltip and hover highlight behavior across different panels"
+          label="图表工具提示"
+          description="控件工具提示和悬停高亮显示不同面板的行为"
         >
           <Select
             onChange={onTooltipChange}
