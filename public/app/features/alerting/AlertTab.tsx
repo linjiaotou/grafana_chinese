@@ -140,12 +140,12 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
       <ConfirmModal
         isOpen={true}
         icon="trash-alt"
-        title="Delete"
+        title="删除"
         body={
           <div>
-            Are you sure you want to delete this alert rule?
+            您确定要删除此预警规则吗?
             <br />
-            <small>You need to save dashboard for the delete to take effect.</small>
+            <small>您需要保存仪表盘以使本次删除生效.</small>
           </div>
         }
         confirmText="删除预警"
@@ -212,12 +212,12 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
               <div ref={(element) => (this.element = element)} />
               {alert && (
                 <HorizontalGroup>
-                  <Button onClick={() => this.onToggleModal('showStateHistory')} variant="secondary">
+                  {/*<Button onClick={() => this.onToggleModal('showStateHistory')} variant="secondary">
                     状态历史
                   </Button>
                   <Button onClick={() => this.onToggleModal('showTestRule')} variant="secondary">
                     检测规则
-                  </Button>
+                  </Button>*/}
                   <Button onClick={() => this.onToggleModal('showDeleteConfirmation')} variant="destructive">
                     删除
                   </Button>

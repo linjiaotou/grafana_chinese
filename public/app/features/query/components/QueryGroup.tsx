@@ -322,7 +322,7 @@ export class QueryGroup extends PureComponent<Props, State> {
           </Button>
         )}
         {isAddingMixed && this.renderMixedPicker()}
-        {config.expressionsEnabled && this.isExpressionsSupported(dsSettings) && (
+        {/*{config.expressionsEnabled && this.isExpressionsSupported(dsSettings) && (
           <Tooltip content="实验特性:查询在下一个版本中可能停止工作" placement="right">
             <Button
               icon="plus"
@@ -334,7 +334,7 @@ export class QueryGroup extends PureComponent<Props, State> {
               <Icon name="exclamation-triangle" className="muted" size="sm" />
             </Button>
           </Tooltip>
-        )}
+        )}*/}
       </HorizontalGroup>
     );
   }

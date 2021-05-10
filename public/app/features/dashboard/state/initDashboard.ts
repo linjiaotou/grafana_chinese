@@ -252,7 +252,7 @@ function getNewDashboardModelData(urlFolderId?: string): any {
       folderId: 0,
     },
     dashboard: {
-      title: '新建仪表盘',
+      title: '预警管理',
       panels: [
         {
           type: 'add-panel',
